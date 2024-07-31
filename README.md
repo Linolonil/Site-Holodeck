@@ -22,6 +22,11 @@ holodeck-site/
   │   │   ├── Store/               # Componentes para a Loja
   │   │   └── Blog/                # Componentes para o Blog (opcional)
   │   ├── hooks/                   # Custom React hooks
+  ├───config
+  │   └───constants
+  │       └───texts
+  │           ├───en
+  │           └───pt-br
   │   ├── pages/                   # Páginas principais
   │   │   ├── Home.jsx             # Página Home
   │   │   ├── Contact.jsx          # Página Contato
