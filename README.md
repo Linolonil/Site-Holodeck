@@ -59,6 +59,7 @@ Para configurar e executar o projeto localmente, siga os passos abaixo:
 Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 
 [node.js](https://nodejs.org/pt)
+
 [npm](https://www.npmjs.com/)
 
 ## Instalação
