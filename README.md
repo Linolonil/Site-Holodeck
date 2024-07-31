@@ -1,10 +1,13 @@
-#Holodeck Site
+# Holodeck Site
+
 Este é o repositório do site da comunidade Holodeck Tecnologia, desenvolvido usando **React** e **JavaScript** com **Vite**. O site possui várias páginas que mostram informações sobre a comunidade, eventos, projetos, e uma loja online.
 
-##Estrutura do Projeto
+## Estrutura do Projeto
 A estrutura do projeto é organizada de forma modular, com componentes reutilizáveis e páginas dedicadas para diferentes seções do site.
 
-> holodeck-site/
+```bash
+.
+holodeck-site/
   ├── public/
   │   └── index.html
   ├── src/
@@ -36,44 +39,50 @@ A estrutura do projeto é organizada de forma modular, com componentes reutiliz�
   │   └── router.jsx               # Configuração de rotas
   ├── package.json
   └── tailwind.config.js
+```
+## Tecnologias Utilizadas
 
-##Tecnologias Utilizadas
-React: Biblioteca para construção da interface do usuário.
-Vite: Ferramenta de build para desenvolvimento rápido e leve.
-JavaScript: Linguagem de programação utilizada para o desenvolvimento do projeto.
-Tailwind CSS: Framework CSS para estilização rápida e eficiente.
-Configuração e Execução do Projeto
+- <a href="https://reactjs.org/" target="_blank">React: Biblioteca para construção da interface do usuário.</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript: Linguagem de programação utilizada para o desenvolvimento do projeto.</a>
+- <a href="https://vitejs.dev/" target="_blank">Vite: Ferramenta de build para desenvolvimento rápido e leve.</a>
+- <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>
+
+## Configuração e Execução do Projeto
 Para configurar e executar o projeto localmente, siga os passos abaixo:
 
-##Pré-requisitos
+## Pré-requisitos
 Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 
 [node.js](https://nodejs.org/pt)
 [npm](https://www.npmjs.com/)
 
-##Instalação
-Clone o repositório:
-> git clone https://github.com/usuario/holodeck-site.git
-
-Navegue até o diretório do projeto:
-> cd holodeck-site
-
-Instale as dependências do projeto:
-> npm install
-
-###Executando o Projeto
+## Instalação
+1. Clone o repositório:
+```bash
+. git clone https://github.com/usuario/holodeck-site.git
+```
+2. Navegue até o diretório do projeto:
+```bash
+. cd holodeck-site
+```
+3. Instale as dependências do projeto:
+```bash
+. npm install
+```
+### Executando o Projeto
 Para executar o projeto localmente, use o seguinte comando:
 
 > npm run dev
 O aplicativo estará disponível em http://localhost:5173.
 
-###Build para Produção
+### Build para Produção
 Para gerar uma build para produção, utilize o comando:
 
 > npm run build
 Os arquivos de build serão gerados na pasta dist.
 
-##Estrutura das Páginas
+## Estrutura das Páginas
 O site possui as seguintes páginas:
 
 - Home: Página inicial com informações gerais sobre a comunidade.
@@ -85,7 +94,7 @@ O site possui as seguintes páginas:
 - Store: Loja online para produtos relacionados à comunidade.
 - Blog (Opcional): Página para postagens de blog e atualizações.
 
-##Contribuição
+## Contribuição
 Se você deseja contribuir para o desenvolvimento deste projeto, siga os passos abaixo:
 
 1. Faça um fork do repositório.
@@ -94,4 +103,4 @@ Se você deseja contribuir para o desenvolvimento deste projeto, siga os passos 
 4. Push para o branch (git push origin minha-feature).
 5. Abra um Pull Request.
 6. Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
+Este projeto está licenciado sob a [MIT License](LICENSE).
