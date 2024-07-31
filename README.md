@@ -6,7 +6,6 @@ Este é o repositório do site da comunidade Holodeck Tecnologia, desenvolvido u
 A estrutura do projeto é organizada de forma modular, com componentes reutilizáveis e páginas dedicadas para diferentes seções do site.
 
 ```bash
-.
 holodeck-site/
   ├── public/
   │   └── index.html
@@ -60,15 +59,15 @@ Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 ## Instalação
 1. Clone o repositório:
 ```bash
-. git clone https://github.com/usuario/holodeck-site.git
+ git clone https://github.com/usuario/holodeck-site.git
 ```
 2. Navegue até o diretório do projeto:
 ```bash
-. cd holodeck-site
+ cd holodeck-site
 ```
 3. Instale as dependências do projeto:
 ```bash
-. npm install
+ npm install
 ```
 ### Executando o Projeto
 Para executar o projeto localmente, use o seguinte comando:
