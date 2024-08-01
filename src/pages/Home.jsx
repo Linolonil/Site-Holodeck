@@ -1,7 +1,5 @@
 // src/pages/Home.jsx
 import React from 'react';
-import Footer from '../components/Layout/Footer';
-
 const Home = () => {
   return (
     <>
