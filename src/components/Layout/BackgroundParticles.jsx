@@ -18,20 +18,15 @@ const BackgroundParticles = () => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor(0x000000, 0); // Fundo transparente
+    renderer.setClearColor(0x00000, 0 ); // Fundo azul escuro (#16235a)
 
     if (mountRef.current) {
       mountRef.current.appendChild(renderer.domElement);
     }
 
-    // Criar partículas
-    const particlesCount = 100; // Quantidade de partículas
-    const geometries = [
-      new THREE.SphereGeometry(0.2, 16, 16),
-      new THREE.BoxGeometry(0.2, 0.2, 0.2),
-      new THREE.CylinderGeometry(0.2, 0.2, 0.4, 16),
-      new THREE.TorusGeometry(0.2, 0.05, 16, 100)
-    ];
+    // Criar partículas (diminuir o tamanho das esferas e aumentar a quantidade)
+    const particlesCount = 80; // Aumentar a quantidade de partículas
+    const geometry = new THREE.SphereGeometry(0.15, 16, 16); // Diminuir o tamanho das esferas
 
     const material = new THREE.MeshBasicMaterial({
       color: 0x8a2be2, // Cor lilás (BlueViolet)
@@ -43,24 +38,38 @@ const BackgroundParticles = () => {
     const particlesData = [];
 
     for (let i = 0; i < particlesCount; i++) {
-      const geometry = geometries[Math.floor(Math.random() * geometries.length)];
       const particle = new THREE.Mesh(geometry, material);
       particle.position.set(
-        (Math.random() - 0.5) * 20,
-        (Math.random() - 0.5) * 20,
-        (Math.random() - 0.5) * 20
+        (Math.random() - 0.5) * 40, // Dispersão nas coordenadas
+        (Math.random() - 0.5) * 40, // Dispersão nas coordenadas
+        (Math.random() - 0.5) * 40  // Dispersão nas coordenadas
       );
       scene.add(particle);
       particles.push(particle);
 
       particlesData.push({
         velocity: new THREE.Vector3(
-          (Math.random() - 0.5) * 0.1,
-          (Math.random() - 0.5) * 0.1,
-          (Math.random() - 0.5) * 0.1
+          (Math.random() - 0.5) * 0.1, // Velocidade ajustada
+          (Math.random() - 0.5) * 0.1, // Velocidade ajustada
+          (Math.random() - 0.5) * 0.1  // Velocidade ajustada
         ),
       });
     }
+
+    // Criar linhas entre partículas
+    const lineMaterial = new THREE.LineBasicMaterial({
+      color: 0x8a2be2,
+      opacity: 0.5,
+      transparent: true
+    });
+
+    const lineGeometry = new THREE.BufferGeometry();
+    const maxConnections = particlesCount * particlesCount; // Máximo de conexões
+    const linePositions = new Float32Array(maxConnections * 3 * 2); // Max connections
+
+    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+    const lineSegments = new THREE.LineSegments(lineGeometry, lineMaterial);
+    scene.add(lineSegments);
 
     // Função de animação
     const animate = () => {
@@ -71,10 +80,35 @@ const BackgroundParticles = () => {
         particle.position.add(data.velocity);
 
         // Reposicionar partículas se saírem do limite
-        if (particle.position.x < -20 || particle.position.x > 20) data.velocity.x = -data.velocity.x;
-        if (particle.position.y < -20 || particle.position.y > 20) data.velocity.y = -data.velocity.y;
-        if (particle.position.z < -20 || particle.position.z > 20) data.velocity.z = -data.velocity.z;
+        if (particle.position.x < -40 || particle.position.x > 40) data.velocity.x = -data.velocity.x;
+        if (particle.position.y < -40 || particle.position.y > 40) data.velocity.y = -data.velocity.y;
+        if (particle.position.z < -40 || particle.position.z > 40) data.velocity.z = -data.velocity.z;
       });
+
+      // Atualizar linhas entre partículas
+      const positions = lineGeometry.attributes.position.array;
+      let index = 0;
+      let lineCount = 0;
+
+      particles.forEach((particleA, i) => {
+        particles.forEach((particleB, j) => {
+          if (i < j) {
+            const distance = particleA.position.distanceTo(particleB.position);
+            if (distance < 10) { // Ajuste a distância para conectar
+              positions[lineCount * 6] = particleA.position.x;
+              positions[lineCount * 6 + 1] = particleA.position.y;
+              positions[lineCount * 6 + 2] = particleA.position.z;
+              positions[lineCount * 6 + 3] = particleB.position.x;
+              positions[lineCount * 6 + 4] = particleB.position.y;
+              positions[lineCount * 6 + 5] = particleB.position.z;
+              lineCount++;
+            }
+          }
+        });
+      });
+
+      lineGeometry.setDrawRange(0, lineCount * 2); // Ajustar o número de linhas visíveis
+      lineGeometry.attributes.position.needsUpdate = true;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
