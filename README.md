@@ -8,7 +8,6 @@ A estrutura do projeto é organizada de forma modular, com componentes reutiliz�
 ```bash
 holodeck-site/
   ├── public/
-  │   └── index.html
   ├── src/
   │   ├── assets/                  # Imagens e arquivos estáticos
   │   ├── components/              # Componentes reutilizáveis
@@ -40,7 +39,8 @@ holodeck-site/
   │   ├── utils/                   # Funções utilitárias
   │   ├── App.jsx                  # Componente raiz
   │   ├── main.jsx                 # Entrada do aplicativo
-  │   └── router.jsx               # Configuração de rotas
+  │   └── router.jsx
+  ├── index.html               # Configuração de rotas
   ├── package.json
   └── tailwind.config.js
 ```

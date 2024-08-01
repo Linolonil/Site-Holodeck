@@ -14,7 +14,6 @@ import Blog from '../src/pages/Blog'; // Opcional
 
 // Importação dos componentes de layout
 import Header from '../src/components/Layout/Header';
-import Footer from '../src/components/Layout/Footer';
 
 const AppRouter = () => {
   return (
@@ -31,7 +30,6 @@ const AppRouter = () => {
         {/* Blog é opcional, caso queira adicionar */}
         <Route path="/blog" element={<Blog />} />
       </Routes>
-      <Footer />
     </Router>
   );
 };
