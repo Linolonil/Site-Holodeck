@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="bg-[#8419c5] text-white relative">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 className="text-2xl font-bold whitespace-nowrap">Holodeck Tecnologia</h1>
+        <h1 className="text-2xl font-bold whitespace-nowrap">Holodeck Tecnologia</h1>
         <div className="lg:hidden">
           {/* Ícone de menu hambúrguer para dispositivos móveis */}
           <button onClick={toggleMenu} aria-label="Toggle Menu">
@@ -20,9 +20,7 @@ const Header = () => {
           </button>
         </div>
         <nav
-          className={`${
-            isMenuOpen ? 'block' : 'hidden'
-          } lg:flex lg:items-center lg:justify-end lg:w-full absolute lg:relative left-0 top-0 bg-[#8419c5] lg:bg-transparent w-full lg:w-auto lg:block`}
+          className={`lg:flex lg:items-center lg:justify-end lg:w-full lg:relative absolute left-0 top-0 w-full bg-[#8419c5] lg:bg-transparent ${isMenuOpen ? 'block' : 'hidden'} lg:block`}
         >
           <ul className="flex flex-col lg:flex-row lg:space-x-4 mt-4 lg:mt-0 space-y-4 lg:space-y-0 text-center lg:text-right">
             <li>
