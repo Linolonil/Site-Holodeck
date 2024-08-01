@@ -22,3 +22,4 @@ const Header = () => {
 };
 
 export default Header; // Certifique-se de exportar o componente corretamente
+
