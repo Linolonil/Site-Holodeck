@@ -4,7 +4,7 @@
 
   const Contato = () => {
     return (
-      <div className="min-h-screen p-4 md:p-8">
+      <div className="min-h-screen p-8 md:p-16">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@
             <h2 className="text-lg md:text-xl font-bold text-gray-900">Informações de Contato:</h2>
             <p className="text-gray-700 mt-2">E-mail: <a href="mailto:holodeckcomunity@gmail.com" className="text-[#8419c5] hover:underline">holodeckcomunity@gmail.com</a></p>
             <p className="text-gray-700">Telefone: <a href="tel:+5592993007673" className="text-[#8419c5] hover:underline"> +5592993007673</a></p>
-            <p className="text-gray-700">Endereço: Rua Pandora, 309, Alvorada, Manaus, AM</p>
+            <p className="text-gray-700">Endereço: xx xxxxx, xxx, Alvorada, Manaus, AM</p>
           </div>
 
           <div className="mt-8">
