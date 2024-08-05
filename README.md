@@ -109,3 +109,10 @@ Se você deseja contribuir para o desenvolvimento deste projeto, siga os passos 
 5. Abra um Pull Request.
 6. Licença
 Este projeto está licenciado sob a [MIT License](LICENSE).
+
+
+color:
+
+Principal {#3c297a} roxo
+Secundaria {#606060} cinza
+Tercearia {#a9e916} verde

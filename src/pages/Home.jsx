@@ -13,7 +13,7 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl sm:text-5xl font-extrabold mb-4 text-black mt-8" // Adicionando margem superior
         >
-          Seja bem-vindo à <span className="text-[#8419c5]">Holodeck Technologies</span>
+          Seja bem-vindo à <span className="text-[#a9e916]">Holodeck Technologies</span>
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -56,7 +56,7 @@ const Home = () => {
           <p className="text-base sm:text-lg text-gray-600 mb-6">
             Explore nossos projetos, participe de eventos e contribua para o crescimento da nossa comunidade. Clique no botão abaixo para saber mais!
           </p>
-          <a href="/communityjoin" className="mt-4 inline-block px-6 py-3 bg-[#8419c5] text-white font-semibold rounded-lg shadow-lg hover:bg-[#782fa6] transition-colors duration-300">
+          <a href="/communityjoin" className="mt-4 inline-block px-6 py-3 bg-[#3c297a] text-white font-semibold rounded-lg shadow-lg hover:bg-[#606060] transition-colors duration-300">
             Saiba Mais
           </a>
         </motion.div>
@@ -71,7 +71,7 @@ const Home = () => {
           <p className="text-base sm:text-lg text-gray-700 mb-6">
             Descubra os projetos mais recentes da nossa comunidade e veja como estamos transformando o futuro da tecnologia.
           </p>
-          <a href="/projects" className="inline-block px-6 py-3 bg-[#8419c5] text-white font-semibold rounded-lg shadow-lg hover:bg-[#782fa6] transition-colors duration-300">
+          <a href="/projects" className="inline-block px-6 py-3 bg-[#3c297a] text-white font-semibold rounded-lg shadow-lg hover:bg-[#606060] transition-colors duration-300">
             Explore Projetos
           </a>
         </motion.div>

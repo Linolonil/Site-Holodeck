@@ -11,18 +11,17 @@ const Blog = () => {
       <section className="container mx-auto my-12 px-6">
         <div className="flex flex-col lg:flex-row bg-white rounded-lg shadow-md overflow-hidden">
           <img
-            src="https://via.placeholder.com/600x400"
+            src="src/assets/info-tech.png"
             alt="Artigo Destaque"
             className="w-full lg:w-1/2 h-auto object-cover"
           />
           <div className="p-8 lg:w-1/2 flex flex-col justify-center">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              The Future of Artificial Intelligence: Trends and Implications
+              O Futuro da tecnologia: A Geração de comunidades
             </h2>
             <p className="text-gray-700 mb-6">
-              Dive into the transformative potential of artificial intelligence and explore how it's reshaping industries and our daily lives.
-            </p>
-            <button className="self-start bg-[#8419c5] text-white py-2 px-6 rounded-full hover:bg-[#7328a9] transition-colors duration-300">
+            medida que a tecnologia continua a evoluir a um ritmo acelerado, um dos fenômenos mais marcantes é a crescente importância das comunidades na configuração do futuro digital.            </p>
+            <button className="self-start bg-[#606060] text-white py-2 px-6 rounded-full hover:bg-[#7328a9] transition-colors duration-300">
               Read More
             </button>
           </div>

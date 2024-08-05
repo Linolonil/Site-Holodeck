@@ -62,7 +62,7 @@
 
             <button
               type="submit"
-              className="w-full bg-[#8419c5] text-white py-2 px-4 rounded-md shadow-md hover:bg-[#782fa6] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-[#3c297a] text-white py-2 px-4 rounded-md shadow-md hover:bg-[#3c297a] focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Enviar Mensagem
             </button>
@@ -70,16 +70,16 @@
 
           <div className="mt-8">
             <h2 className="text-lg md:text-xl font-bold text-gray-900">Informações de Contato:</h2>
-            <p className="text-gray-700 mt-2">E-mail: <a href="mailto:holodeckcomunity@gmail.com" className="text-[#8419c5] hover:underline">holodeckcomunity@gmail.com</a></p>
-            <p className="text-gray-700">Telefone: <a href="tel:+5592993007673" className="text-[#8419c5] hover:underline"> +5592993007673</a></p>
+            <p className="text-gray-700 mt-2">E-mail: <a href="mailto:holodeckcomunity@gmail.com" className="text-[#3c297a] hover:underline">holodeckcomunity@gmail.com</a></p>
+            <p className="text-gray-700">Telefone: <a href="tel:+5592993007673" className="text-[#372578] hover:underline"> +5592993007673</a></p>
             <p className="text-gray-700">Endereço: xx xxxxx, xxx, Alvorada, Manaus, AM</p>
           </div>
 
           <div className="mt-8">
             <h2 className="text-lg md:text-xl font-bold text-gray-900">Redes Sociais:</h2>
             <ul className="flex flex-wrap gap-4 mt-2">
-              <li><a href="https://www.linkedin.com/in/holodeck-technologies-community?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="text-[#8419c5] hover:underline">LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/holodeckcommunity/profilecard/?igsh=bzJ6Zmlua3h3aHQ=" target="_blank" rel="noopener noreferrer" className="text-[#8419c5] hover:underline">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/holodeck-technologies-community?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="text-[#372578] hover:underline">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/holodeckcommunity/profilecard/?igsh=bzJ6Zmlua3h3aHQ=" target="_blank" rel="noopener noreferrer" className="text-[#3c297a] hover:underline">Instagram</a></li>
             </ul>
           </div>
         </motion.div>

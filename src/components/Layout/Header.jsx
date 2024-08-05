@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineClose, AiOutlineHome, AiOutlineMail, AiOutlineUserAdd, AiOutlineUsergroupAdd, AiOutlineProject, AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineBook } from 'react-icons/ai';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -11,26 +11,31 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#8419c5] text-white relative">
+    <header className="bg-[#3c297a] text-white relative">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo com Fonte Personalizada */}
         <div className="text-3xl font-bold">
-          Holodeck<span className="text-gray-200">.</span>
+          Holodeck<span className="text-gray-200"></span>
         </div>
 
         {/* Botão de Menu para Modo Mobile */}
-        <div className="lg:hidden flex items-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="lg:hidden flex items-center"
+        >
           <button onClick={toggleMenu} aria-label="Toggle Menu" className="text-white">
             {isMenuOpen ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
           </button>
-        </div>
+        </motion.div>
 
         {/* Menu Desktop */}
         <nav className={`hidden lg:flex lg:items-center lg:justify-end space-x-6`}>
           <a href="/" className="hover:text-gray-200 transition-colors duration-200">Home</a>
           <a href="/contact" className="hover:text-gray-200 transition-colors duration-200">Contato</a>
-          <a href="/community-join" className="hover:text-gray-200 transition-colors duration-200">Entrar na Comunidade</a>
-          <a href="/collaborator" className="hover:text-gray-200 transition-colors duration-200">Seja um Colaborador</a>
+          <a href="/community-join" className="hover:text-gray-200 transition-colors duration-200">Comunidade</a>
+          <a href="/collaborator" className="hover:text-gray-200 transition-colors duration-200">Colaborador</a>
           <a href="/projects" className="hover:text-gray-200 transition-colors duration-200">Projetos</a>
           <a href="/events" className="hover:text-gray-200 transition-colors duration-200">Eventos</a>
           <a href="/store" className="hover:text-gray-200 transition-colors duration-200">Loja</a>
@@ -53,31 +58,57 @@ const Header = () => {
 
       {/* Menu Mobile */}
       <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : -20 }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
-        className={`fixed inset-0 z-50 bg-[#8419c5] flex flex-col items-center justify-center space-y-6 text-xl font-semibold lg:hidden ${
+        initial={{ opacity: 0, x: '100%' }}
+        animate={{ opacity: isMenuOpen ? 1 : 0, x: isMenuOpen ? 0 : '100%' }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        className={`fixed top-0 right-0 z-50 bg-[#3c297a] h-full w-[75vw] max-w-sm flex flex-col items-end py-6 px-4 space-y-6 text-xl font-semibold lg:hidden ${
           isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-        }`}
+        } border-l border-[#ffffff40] rounded-bl-lg`}
       >
         {/* Ícone de Fechar para Menu Mobile */}
         <button
           onClick={toggleMenu}
           aria-label="Close Menu"
-          className="absolute top-4 right-4 text-white"
+          className="text-white mb-4"
         >
           <AiOutlineClose size={30} />
         </button>
         
         {/* Links do Menu Mobile */}
-        <a href="/" onClick={toggleMenu} className="hover:text-gray-200 transition">Home</a>
-        <a href="/contact" onClick={toggleMenu} className="hover:text-gray-200 transition">Contato</a>
-        <a href="/community-join" onClick={toggleMenu} className="hover:text-gray-200 transition">Entrar na Comunidade</a>
-        <a href="/collaborator" onClick={toggleMenu} className="hover:text-gray-200 transition">Seja um Colaborador</a>
-        <a href="/projects" onClick={toggleMenu} className="hover:text-gray-200 transition">Projetos</a>
-        <a href="/events" onClick={toggleMenu} className="hover:text-gray-200 transition">Eventos</a>
-        <a href="/store" onClick={toggleMenu} className="hover:text-gray-200 transition">Loja</a>
-        <a href="/blog" onClick={toggleMenu} className="hover:text-gray-200 transition">Blog</a>
+        <div className="flex flex-col items-end space-y-4 w-full">
+          <a href="/" onClick={toggleMenu} className="hover:text-gray-200 transition border-b border-gray-500 py-2 w-full text-right flex items-center space-x-2">
+            <AiOutlineHome size={20} />
+            <span>Home</span>
+          </a>
+          <a href="/contact" onClick={toggleMenu} className="hover:text-gray-200 transition border-b border-gray-500 py-2 w-full text-right flex items-center space-x-2">
+            <AiOutlineMail size={20} />
+            <span>Contato</span>
+          </a>
+          <a href="/community-join" onClick={toggleMenu} className="hover:text-gray-200 transition border-b border-gray-500 py-2 w-full text-right flex items-center space-x-2">
+            <AiOutlineUserAdd size={20} />
+            <span>Comunidade</span>
+          </a>
+          <a href="/collaborator" onClick={toggleMenu} className="hover:text-gray-200 transition border-b border-gray-500 py-2 w-full text-right flex items-center space-x-2">
+            <AiOutlineUsergroupAdd size={20} />
+            <span>Colaborador</span>
+          </a>
+          <a href="/projects" onClick={toggleMenu} className="hover:text-gray-200 transition border-b border-gray-500 py-2 w-full text-right flex items-center space-x-2">
+            <AiOutlineProject size={20} />
+            <span>Projetos</span>
+          </a>
+          <a href="/events" onClick={toggleMenu} className="hover:text-gray-200 transition border-b border-gray-500 py-2 w-full text-right flex items-center space-x-2">
+            <AiOutlineCalendar size={20} />
+            <span>Eventos</span>
+          </a>
+          <a href="/store" onClick={toggleMenu} className="hover:text-gray-200 transition border-b border-gray-500 py-2 w-full text-right flex items-center space-x-2">
+            <AiOutlineShoppingCart size={20} />
+            <span>Loja</span>
+          </a>
+          <a href="/blog" onClick={toggleMenu} className="hover:text-gray-200 transition border-b border-gray-500 py-2 w-full text-right flex items-center space-x-2">
+            <AiOutlineBook size={20} />
+            <span>Blog</span>
+          </a>
+        </div>
 
         {/* Ícones Sociais Mobile */}
         <div className="flex items-center space-x-6 pt-4">
