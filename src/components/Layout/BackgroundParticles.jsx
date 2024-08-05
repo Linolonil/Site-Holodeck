@@ -29,7 +29,7 @@ const BackgroundParticles = () => {
     const geometry = new THREE.SphereGeometry(0.15, 16, 16); // Diminuir o tamanho das esferas
 
     const material = new THREE.MeshBasicMaterial({
-      color: 0xA9E916, // Cor lilás (BlueViolet)
+      color: 0xA9E916, 
       transparent: true,
       opacity: 0.8,
     });
@@ -58,7 +58,7 @@ const BackgroundParticles = () => {
 
     // Criar linhas entre partículas
     const lineMaterial = new THREE.LineBasicMaterial({
-      color: 0x8a2be2,
+      color: 0xA9E916,
       opacity: 0.5,
       transparent: true
     });
