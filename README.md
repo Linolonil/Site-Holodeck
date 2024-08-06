@@ -7,11 +7,27 @@ A estrutura do projeto é organizada de forma modular, com componentes reutiliz�
 
 ```bash
 holodeck-site/
+  ├── backend/
+  │   ├── package.json
+  │   ├── package-lock.json
+  │   └── server.js
+  ├── config/
+  │   └── constants/
+  │       └── constants
+  │           └── texts
+  │               ├── en/
+  │               └── pt-br/
   ├── public/
   ├── src/
   │   ├── assets/                  # Imagens e arquivos estáticos
+  │   │   ├── info-tech.png
+  │   │   ├── logo-sem-fundo.png
+  │   │   └── logo.png
   │   ├── components/              # Componentes reutilizáveis
   │   │   ├── Layout/              # Componentes de layout como Header, Footer, etc.
+  │   │   │   ├── BackgroundParticles.jsx
+  │   │   │   ├── Footer.jsx
+  │   │   │   └── Header.jsx
   │   │   ├── Home/                # Componentes específicos para a Home
   │   │   ├── Contact/             # Componentes para a página de Contato
   │   │   ├── CommunityJoin/       # Componentes para Entrar na Comunidade
@@ -19,13 +35,8 @@ holodeck-site/
   │   │   ├── Projects/            # Componentes para Projetos
   │   │   ├── Events/              # Componentes para Eventos
   │   │   ├── Store/               # Componentes para a Loja
-  │   │   └── Blog/                # Componentes para o Blog (opcional)
+  │   │   └── Blog/                # Componentes para o Blog
   │   ├── hooks/                   # Custom React hooks
-  ├───config
-  │   └───constants
-  │       └───texts
-  │           ├───en
-  │           └───pt-br
   │   ├── pages/                   # Páginas principais
   │   │   ├── Home.jsx             # Página Home
   │   │   ├── Contact.jsx          # Página Contato
@@ -34,15 +45,19 @@ holodeck-site/
   │   │   ├── Projects.jsx         # Página Projetos Já Desenvolvidos
   │   │   ├── Events.jsx           # Página Eventos
   │   │   ├── Store.jsx            # Página Loja
-  │   │   └── Blog.jsx             # Página Blog (opcional)
+  │   │   └── Blog.jsx             # Página Blog
   │   ├── styles/                  # Arquivos de estilo (CSS, Tailwind)
+  │   │   └── main.css             # Arquivo principal de estilo
   │   ├── utils/                   # Funções utilitárias
   │   ├── App.jsx                  # Componente raiz
   │   ├── main.jsx                 # Entrada do aplicativo
-  │   └── router.jsx
-  ├── index.html               # Configuração de rotas
+  │   └── router.jsx               # Configuração de rotas
+  ├── index.html
   ├── package.json
-  └── tailwind.config.js
+  ├── package-lock.json
+  ├── postcss.config.js
+  ├── tailwind.config.js
+  └── vite.config.js
 ```
 ## Tecnologias Utilizadas
 
