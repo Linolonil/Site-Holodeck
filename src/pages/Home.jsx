@@ -21,7 +21,7 @@ const Home = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-2xl sm:text-3xl font-medium text-gray-700"
         >
-          Tornando o Norte à inovação, tecnologia de excelência.
+        Encontre o melhor lugar para se desenvolver e se conectar com grandes oportunidades
         </motion.h2>
       </section>
 
