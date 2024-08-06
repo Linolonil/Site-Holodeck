@@ -9,4 +9,4 @@ const Events = () => {
   );
 };
 
-export default Events; // Exportação padrão
+export default Events; 

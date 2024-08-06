@@ -9,4 +9,4 @@ const Store = () => {
   );
 };
 
-export default Store; // Exportação padrão
+export default Store;

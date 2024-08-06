@@ -20,7 +20,6 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // Exemplo de alias
       '@components': '/src/components',
       '@assets': '/src/assets',
     },

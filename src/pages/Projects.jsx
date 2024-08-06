@@ -9,4 +9,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; // Exportação padrão
+export default Projects;
