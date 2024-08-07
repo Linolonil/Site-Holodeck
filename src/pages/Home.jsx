@@ -54,7 +54,9 @@ const Home = () => {
         >
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">Junte-se a Nós</h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6">
-            Explore nossos projetos, participe de eventos e contribua para o crescimento da nossa comunidade. Clique no botão abaixo para saber mais!
+          Navegue por nossos projetos e veja como estamos mudando o cenário tecnológico.
+          Participe de eventos inspiradores, onde você poderá aprender, compartilhar e crescer ao lado de outros entusiastas de tecnologia. 
+          Contribua ativamente para o desenvolvimento da nossa comunidade, ajudando a criar um ambiente onde a inovação floresce e o conhecimento é compartilhado.
           </p>
           <a href="/communityjoin" className="mt-4 inline-block px-6 py-3 bg-[#3c297a] text-white font-semibold rounded-lg shadow-lg hover:bg-[#606060] transition-colors duration-300">
             Saiba Mais
