@@ -1,29 +1,28 @@
-// server.js
-const express = require('express');
-const axios = require('axios');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import articleRoutes from './routes/articleRoutes.js';
+import swaggerUi from 'swagger-ui-express';
+import specs from './swaggerOption.js';
+
+
+
+
+dotenv.config(); // Carrega variáveis de ambiente
+
 const app = express();
-const port = 5001;
+const port = process.env.PORT || 5001;
 
-// Middleware para permitir requisições CORS
+// Middleware
 app.use(cors());
+app.use(express.json());
 
-// Rota para buscar artigos
-app.get('/api/articles', async (req, res) => {
-  console.log('Received request for /api/articles'); // Log para depuração
-  try {
-    const response = await axios.get('https://newsapi.org/v2/top-headlines', {
-      params: {
-        category: 'technology',
-        apiKey: 'YOUR_NEWS_API_KEY', // Substitua pela sua chave de API
-      },
-    });
-    res.json(response.data.articles);
-  } catch (error) {
-    console.error('Error fetching articles:', error.message); // Mostrar mensagem de erro
-    res.status(500).send('Error fetching articles');
-  }
-});
+
+// rota para acessar api com swagger 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+
+// Routes com prefixo /api
+app.use('/api/articles', articleRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
