@@ -53,24 +53,24 @@ const Header = () => {
           >
             Home
           </a>
-          <a
+          {/* <a
             href="/contact"
             className="hover:text-gray-200 transition-colors duration-200"
           >
             Contato
-          </a>
+          </a> */}
           <a
             href="/community-join"
             className="hover:text-gray-200 transition-colors duration-200"
           >
             Comunidade
           </a>
-          <a
+          {/* <a
             href="/collaborator"
             className="hover:text-gray-200 transition-colors duration-200"
           >
             Colaborador
-          </a>
+          </a> */}
           <a
             href="/projects"
             className="hover:text-gray-200 transition-colors duration-200"
@@ -130,7 +130,7 @@ const Header = () => {
       </div>
 
       {/* Linha Verde-Limão */}
-      <div className="bg-lime-500 h-1"></div> {/* Linha verde-limão abaixo do cabeçalho */}
+      <div className="bg-[#a9e916] h-1"></div> 
 
       {/* Menu Mobile */}
       <motion.nav
@@ -160,14 +160,14 @@ const Header = () => {
             <AiOutlineHome size={20} />
             <span>Home</span>
           </a>
-          <a
+          {/* <a
             href="/contact"
             onClick={toggleMenu}
             className="hover:text-gray-200 transition border-b border-lime-500 py-2 w-full text-right flex items-center space-x-2"
           >
             <AiOutlineMail size={20} />
             <span>Contato</span>
-          </a>
+          </a> */}
           <a
             href="/community-join"
             onClick={toggleMenu}
@@ -176,14 +176,14 @@ const Header = () => {
             <AiOutlineUserAdd size={20} />
             <span>Comunidade</span>
           </a>
-          <a
+          {/* <a
             href="/collaborator"
             onClick={toggleMenu}
             className="hover:text-gray-200 transition border-b border-lime-500 py-2 w-full text-right flex items-center space-x-2"
           >
             <AiOutlineUsergroupAdd size={20} />
             <span>Colaborador</span>
-          </a>
+          </a> */}
           <a
             href="/projects"
             onClick={toggleMenu}
