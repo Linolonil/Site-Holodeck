@@ -1,4 +1,4 @@
-# Projeto de Artigos NYTimes
+# API de Artigos NYTimes 
 
 Este projeto é uma aplicação backend que busca artigos da NYTimes por categoria e expõe uma API para acesso a esses dados. A API também está documentada com Swagger.
 
@@ -20,14 +20,32 @@ Este projeto é uma aplicação backend que busca artigos da NYTimes por categor
    cd /backend
    npm install
 2. **Configuração das Variáveis de Ambiente**
+### Configuração das Variáveis de Ambiente
 
-    Crie um arquivo ".env" na pasta /backend com as seguintes variáveis:
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu arquivo `.env`:
 
-    ***PORT=5001***
+1. **PORT**
+2. **API_KEY**
 
-    ***API_KEY=your_nytimes_api_key***
+### Passos para Configuração
 
-    Substitua ***your_nytimes_api_key*** pela sua chave de API da NYTimes.
+1. **Crie um arquivo `.env` na pasta `/backend` com as seguintes variáveis:**
+
+   ```plaintext
+   PORT=5001
+   API_KEY=your_nytimes_api_key
+   
+   ``` 
+
+
+    Substitua your_nytimes_api_key por sua chave de API da NYTimes EX: 
+    **urDDCDLsKLpYWZBwrzA7azS4c9u2IM5e**
+
+    você pode criar a chave nesse link: [nytimes.api](https://developer.nytimes.com/my-apps/)
+    
+     
+
+    se cadastre e vá em apps e crie sua propia chave 
 
 3. **Execução da Aplicação**
 
@@ -43,7 +61,8 @@ Este projeto é uma aplicação backend que busca artigos da NYTimes por categor
 
 4. **Acesso à API**
 
-    Após iniciar o servidor, a API estará disponível na URL base ***/api/article/category/:category***. A documentação da API pode ser acessada em ***/api-docs*** com swagger.
+    Após iniciar o servidor, a API estará disponível na URL base /api/article/category/:category. A documentação da API pode ser acessada em 
+    /api-docs com swagger.
 
 5. **Endpoint para buscar artigos por categoria:**
 
