@@ -9,9 +9,6 @@ const Blog = () => {
 
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
 
   return (
     <div className="min-h-screen bg-transparent">
@@ -20,15 +17,13 @@ const Blog = () => {
 
       {/* Seção de Artigos Recentes */}
       <section className="container mx-auto px-6 my-12">
-        <h3 className="text-3xl font-semibold text-gray-800 mb-6">
-          Latest Articles
-        </h3>
+       
 
         {/*Filtro dos Artigos*/}
-        <FilterSection onCategoryChange={handleCategoryChange}/>
+        <FilterSection />
 
         {/* Lista de Artigos */}
-        <ArticlesSection category={selectedCategory}/>
+        <ArticlesSection />
       </section>
     </div>
   );

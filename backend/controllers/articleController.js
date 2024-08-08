@@ -30,12 +30,14 @@ const getArticlesByCategories = async (req, res) => {
       const multimedia = article.multimedia || [];
       const imageUrl = multimedia.length > 0 ? `https://static01.nyt.com/${multimedia[0].url}` : null;
 
-      return {
+      const articlesByCategory = {
         title: article.headline?.main || 'Sem título',
         url: article.web_url || 'URL não disponível',
         image: imageUrl,
         description: article.abstract || 'Descrição não disponível'
-      };
+      }
+
+      return articlesByCategory;
     });
 
     res.json(articles);
