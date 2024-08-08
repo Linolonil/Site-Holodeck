@@ -26,8 +26,8 @@ const Community = () => {
   <div className="relative p-8 md:p-12 flex flex-col-reverse md:flex-row items-center justify-between z-10">
     {/* Texto e Botão */}
     <div className="w-full md:w-1/2 space-y-6">
-      <h1 className="text-3xl md:text-5xl font-bold leading-tight text-white mb-4">
-        Bem-vindo à Comunidade Holodeck
+      <h1 className="text-3xl md:text-5xl font-black leading-tight text-white mb-4">
+      <span className="text-[#3c297a]">Conheça a Holodeck Technologies</span>
       </h1>
       <p className="text-base md:text-lg text-white mb-6">
         A Holodeck é uma comunidade vibrante de entusiastas de tecnologia e inovação no norte do Brasil. Nossa missão é reunir pessoas apaixonadas por tecnologia, promovendo eventos, projetos colaborativos e aprendizado contínuo.
