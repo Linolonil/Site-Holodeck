@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 const Community = () => {
   return (
-    <div className="min-h-screen p-9 md:p-26 bg-gradient-to-br ">
+    <div className="min-h-screen p-10 md:p-26 bg-gradient-to-br ">
       <motion.section
         id="comunidade"
         className="relative max-w-7xl mx-auto rounded-3xl shadow-2xl overflow-hidden"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7 }}
       >
         {/* Imagem de fundo */}
         <div className="absolute inset-0">
@@ -73,102 +73,58 @@ const Community = () => {
         </div>
       </motion.section>
 
-      {/* Seção 2: Seja um Colaborador */}
-      <section
-        id="colaborador"
-        className=" relative max-w-7xl mx-auto rounded-3xl shadow-lg overflow-hidden my-10 p-6 bg-gradient-to-r from-[#7b39d8] via-[#3e34af] to-[#7152ff]"
-        style={{
-          backgroundImage:
-            "url('src/assets/image-comunidade-3.png'), linear-gradient(to right, #7b39d8, #3e34af, #7152ff)",
-          backgroundSize: "contain, cover",
-          backgroundPosition: "right, center",
-          backgroundRepeat: "no-repeat, no-repeat",
-          minHeight: "600px",
-        }}
-      >
-        {/* Novo Bloco Adicionado */}
-        <div className="items-start justify-start bg-black bg-opacity-20 p-20  rounded-3xl relative z-30 mx-auto max-w-screen-xl text-left">
-          {/* Container de Ícones Flutuantes */}
-          <div className="relative top-5 left-0 w-full h-full flex items-start justify-start z-20 pointer-events-none">
-            <div className="flex space-x-8 animate-float">
-              <motion.img
-                src="src/assets/10946063.png"
-                alt="Ícone 1"
-                className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 transform hover:scale-110"
-                animate={{ y: [0, -20, 0] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              <motion.img
-                src="src/assets/10946063.png"
-                alt="Ícone 2"
-                className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 transform hover:scale-110"
-                animate={{ y: [0, -20, 0] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.2,
-                }}
-              />
-              <motion.img
-                src="src/assets/10946063.png"
-                alt="Ícone 3"
-                className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 transform hover:scale-110"
-                animate={{ y: [0, -20, 0] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.4,
-                }}
-              />
-              <motion.img
-                src="src/assets/10946063.png"
-                alt="Ícone 4"
-                className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 transform hover:scale-110"
-                animate={{ y: [0, -20, 0] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.6,
-                }}
-              />
-              <motion.img
-                src="src/assets/10946063.png"
-                alt="Ícone 5"
-                className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 transform hover:scale-110"
-                animate={{ y: [0, -20, 0] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.8,
-                }}
-              />
-            </div>
-          </div>
+   {/* Seção 2: Seja um Colaborador */}
+<motion.section
+  id="colaborador"
+  className="relative max-w-7xl mx-auto rounded-3xl shadow-lg overflow-hidden my-5 mt-40 p-6 bg-gradient-to-r from-[#7b39d8] via-[#3e34af] to-[#7152ff] lg:p-15 xl:p-12"
+  initial={{ opacity: 0, y: 90 }}
+  animate={{ opacity: 7, y: 10 }}
+  transition={{ duration: 0.9 }}
+  style={{
+    backgroundImage:
+      "url('src/assets/image-comunidade-3.png'), linear-gradient(to right, #7b39d8, #3e34af, #7152ff)",
+    backgroundSize: "cover, cover",
+    backgroundPosition: "center, center",
+    backgroundRepeat: "no-repeat, no-repeat",
+    minHeight: "600px",
+  }}
+>
+  <div className="bg-black bg-opacity-20 p-9 sm:p-10 md:p-12 lg:p-16 xl:p-20 rounded-3xl relative z-z0 mx-auto max-w-screen-2xl text-left">
+    {/* Container de Ícones Flutuantes */}
+    <div className="relative w-full h-full flex flex-wrap items-start justify-start space-x-4 sm:space-x-8 lg:space-x-12 animate-float pointer-events-none">
+      {Array.from({ length: 5 }).map((_, index) => (
+        <motion.img
+          key={index}
+          src="src/assets/10946063.png"
+          alt={`Ícone ${index + 1}`}
+          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 transition-transform duration-300 transform hover:scale-110"
+          animate={{ y: [0, -20, 0] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: index * 0.2,
+          }}
+        />
+      ))}
+    </div>
 
-          <div className="w-2/5 mb-9">
-            <h1 className="text-6xl w-2-1 md:text-5xl font-medium mt-12 text-white">
-            Colabore com sua equipe em holodeck
-            </h1>
-            <p className="text-left w-2/2 mt-5 mb-12 font-light text-white">
-            Conecte-se com toda a equipe colabore com o desenvolvimento de projetos colaborativos .
-            </p>
-            <button
+    <div className="w-full md:w-2/5 mb-9 mt-10 md:mt-0">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white">
+        Colabore com sua equipe em Holodeck
+      </h1>
+      <p className="mt-5 mb-8 text-white font-light leading-relaxed">
+        Conecte-se com toda a equipe e colabore no desenvolvimento de projetos colaborativos.
+      </p>
+      <button
         onClick={() => navigate("/Collaborator.jsx")}
-        className="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 px-8 rounded-full font-semibold shadow-lg hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
+        className="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-6 sm:py-3 sm:px-8 rounded-full font-semibold shadow-lg hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
       >
         Saiba Mais
       </button>
-          </div>
-        </div>
-      </section>
+    </div>
+  </div>
+</motion.section>
 
       {/* Seção de Projetos */}
       <section className="max-w-7xl mx-auto px-1 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -339,5 +295,4 @@ const Community = () => {
 };
 
 export default Community;
-
 
