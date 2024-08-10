@@ -1,133 +1,129 @@
 // src/pages/Community.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import FloatingIcons from "../components/Layout/Collaborator/FloatingIcons"; // Ajuste o caminho conforme necessário
 
 const Community = () => {
   return (
-    <div className="min-h-screen p-10 md:p-26 bg-gradient-to-br ">
-      <motion.section
-        id="comunidade"
-        className="relative max-w-7xl mx-auto rounded-3xl shadow-2xl overflow-hidden"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-      >
-        {/* Imagem de fundo */}
-        <div className="absolute inset-0">
-          <img
-            src="src/assets/image-comunidade.jpg"
-            alt="Comunidade"
-            className="w-full h-full object-cover opacity-100"
-          />
-        </div>
-
-        {/* Seção Principal */}
-        <div className="relative p-8 md:p-12 flex flex-col-reverse md:flex-row items-center justify-between z-10">
-          {/* Texto e Botão */}
-          <div className="w-full md:w-1/2 space-y-6">
-            <h1 className="text-3xl md:text-5xl font-black leading-tight text-white mb-4">
-              <span className="text-[#3c297a]">
-                Conheça a Holodeck Community
-              </span>
-            </h1>
-            <p className="text-base md:text-lg text-white mb-6">
-              A Holodeck é uma comunidade vibrante de entusiastas de tecnologia
-              e inovação no norte do Brasil. Nossa missão é reunir pessoas
-              apaixonadas por tecnologia, promovendo eventos, projetos
-              colaborativos e aprendizado contínuo.
-            </p>
-            <motion.button
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              Explore Mais
-            </motion.button>
+    <div className="min-h-screen mt-10 m-2 ">
+      <div className="max-w-full mx-auto flex flex-col lg:flex-row mt-14 mb-10">
+        <motion.section
+          id="comunidade"
+          className="relative max-w-7xl max-h-max mx-auto rounded-3xl shadow-2xl overflow-hidden"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          {/* Imagem de fundo */}
+          <div className="absolute inset-0">
+            <img
+              src="src/assets/image-comunidade.jpg"
+              alt="Comunidade"
+              className="w-full h-full object-cover opacity-100"
+            />
           </div>
 
-          {/* Imagem de Fundo com Opacidade Reduzida */}
-          <div className="relative w-full md:w-1/2"></div>
-        </div>
+          {/* Seção Principal */}
+          <div className="relative p-8 md:p-12 flex flex-col-reverse md:flex-row items-center justify-between z-10">
+            {/* Texto e Botão */}
+            <div className="w-full md:w-2/5  space-y-6">
+              <h1 className="text-3xl md:text-5xl font-black leading-tight text-white mb-8">
+                <span className="text-[#3c297a]">
+                  Conheça a Holodeck Community
+                </span>
+              </h1>
+              <p className="text-base md:text-justify text-white mb-6">
+                A Holodeck é uma comunidade vibrante de entusiastas de
+                tecnologia e inovação no norte do Brasil. Nossa missão é reunir
+                pessoas apaixonadas por tecnologia, promovendo eventos, projetos
+                colaborativos e aprendizado contínuo.
+              </p>
+              <motion.button
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
+                whileHover={{ scale: 1.05 }}
+              >
+                Explore Mais
+              </motion.button>
+            </div>
 
-        {/* Seção de Estatísticas */}
-        <div className="relative flex flex-col md:flex-row items-center justify-around p-8 md:p-12 bg-[#191825] border-t-8 border-[#a9e916] mt-56 z-10">
-          <div className="text-center flex-1 mb-6 md:mb-0">
-            <h2 className="text-2xl md:text-3xl font-semibold text-white">
-              80%
-            </h2>
-            <p className="text-sm font-light text-gray-300">Engajamento</p>
+            {/* Imagem de Fundo com Opacidade Reduzida */}
+            <div className="relative w-full md:w-1/2"></div>
           </div>
-          <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
-          <div className="text-center flex-1 mb-6 md:mb-0">
-            <h2 className="text-2xl md:text-3xl font-semibold text-white">3</h2>
-            <p className="text-sm font-light text-gray-300">
-              Projetos Completos
-            </p>
-          </div>
-          <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
-          <div className="text-center flex-1">
-            <h2 className="text-2xl md:text-3xl font-semibold text-white">
-              76+
-            </h2>
-            <p className="text-sm font-light text-gray-300">Colaboradores</p>
-          </div>
-        </div>
-      </motion.section>
 
-   {/* Seção 2: Seja um Colaborador */}
-<motion.section
-  id="colaborador"
-  className="relative max-w-7xl mx-auto rounded-3xl shadow-lg overflow-hidden my-5 mt-40 p-6 bg-gradient-to-r from-[#7b39d8] via-[#3e34af] to-[#7152ff] lg:p-15 xl:p-12"
-  initial={{ opacity: 0, y: 90 }}
-  animate={{ opacity: 7, y: 10 }}
-  transition={{ duration: 0.9 }}
-  style={{
-    backgroundImage:
-      "url('src/assets/image-comunidade-3.png'), linear-gradient(to right, #7b39d8, #3e34af, #7152ff)",
-    backgroundSize: "cover, cover",
-    backgroundPosition: "center, center",
-    backgroundRepeat: "no-repeat, no-repeat",
-    minHeight: "600px",
-  }}
->
-  <div className="bg-black bg-opacity-20 p-9 sm:p-10 md:p-12 lg:p-16 xl:p-20 rounded-3xl relative z-z0 mx-auto max-w-screen-2xl text-left">
-    {/* Container de Ícones Flutuantes */}
-    <div className="relative w-full h-full flex flex-wrap items-start justify-start space-x-4 sm:space-x-8 lg:space-x-12 animate-float pointer-events-none">
-      {Array.from({ length: 5 }).map((_, index) => (
-        <motion.img
-          key={index}
-          src="src/assets/10946063.png"
-          alt={`Ícone ${index + 1}`}
-          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 transition-transform duration-300 transform hover:scale-110"
-          animate={{ y: [0, -20, 0] }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: index * 0.2,
+          {/* Seção de Estatísticas */}
+          <div className="relative flex flex-col md:flex-row items-center justify-around p-2 md:p-12 bg-[#191825] border-t-8 border-[#a9e916]  z-10">
+            <div className="text-center flex-1 mb-2 md:mb-0">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white">
+                80%
+              </h2>
+              <p className="text-sm font-light text-gray-300">Engajamento</p>
+            </div>
+            <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
+            <div className="text-center flex-1 mb-6 md:mb-0">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white">
+                3
+              </h2>
+              <p className="text-sm font-light text-gray-300">
+                Projetos Completos
+              </p>
+            </div>
+            <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
+            <div className="text-center flex-1">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white">
+                76+
+              </h2>
+              <p className="text-sm font-light text-gray-300">Colaboradores</p>
+            </div>
+          </div>
+        </motion.section>
+      </div>
+
+      {/* Container principal para ambas as seções */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row mt-14 mb-10">
+        {/* Seção 1: Seja um Colaborador */}
+        <motion.section
+          id="colaborador"
+          className="relative md:max-w-full flex-1 rounded-3xl shadow-lg overflow-hidden flex items-center m-2"
+          initial={{ opacity: 0, y: 90 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #7b39d8, #3e34af, #7152ff)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "300px",
           }}
-        />
-      ))}
-    </div>
+        >
+          {/* Div para o conteúdo de texto à esquerda */}
+          <div className="flex-grow mt-5 p-9 sm:p-5 md:p-6 lg:p-8 xl:p-10 text-left  ">
+            <FloatingIcons />
+            <br />
 
-    <div className="w-full md:w-2/5 mb-9 mt-10 md:mt-0">
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white">
-        Colabore com sua equipe em Holodeck
-      </h1>
-      <p className="mt-5 mb-8 text-white font-light leading-relaxed">
-        Conecte-se com toda a equipe e colabore no desenvolvimento de projetos colaborativos.
-      </p>
-      <button
-        onClick={() => navigate("/Collaborator.jsx")}
-        className="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-6 sm:py-3 sm:px-8 rounded-full font-semibold shadow-lg hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
-      >
-        Saiba Mais
-      </button>
-    </div>
-  </div>
-</motion.section>
+            <div className="w-full md:w-1/2 mb-9 mt-20">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl mt-20 font-semibold text-white">
+                Encontre e Colabore com sua equipe em Holodeck
+              </h1>
+
+              <p className="mt-11 mb-4 text-white font-light leading-relaxed">
+                Conecte-se com toda a equipe e colabore no desenvolvimento de
+                projetos colaborativos, fortalecendo seu conhecimento e
+                compartilhando com todos.
+              </p>
+              <button
+                onClick={() => navigate("/Collaborator.jsx")}
+                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-6 sm:py-3 sm:px-8 rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
+              >
+                Saiba Mais
+              </button>
+            </div>
+          </div>
+        </motion.section>
+      </div>
 
       {/* Seção de Projetos */}
-      <section className="max-w-7xl mx-auto px-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section className=" max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-gradient-to-br from-purple-500 to-purple-700 p-8 rounded-3xl flex flex-col items-center shadow-xl hover:shadow-2xl transition duration-300">
           <img
             src="src/assets/laptop-com-icone-de-codigo.avif"
@@ -157,7 +153,7 @@ const Community = () => {
       </section>
 
       {/* Seção 3: Contato */}
-      <section id="contato" className="max-w-4xl mx-auto mt-20">
+      <section id="contato" className="max-w-4xl mx-auto mt-20 mb-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -295,4 +291,3 @@ const Community = () => {
 };
 
 export default Community;
-
