@@ -1,105 +1,180 @@
 // src/pages/Community.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import FloatingIcons from "../components/Layout/Collaborator/FloatingIcons"; // Ajuste o caminho conforme necessário
 
 const Community = () => {
   return (
-    <div className="min-h-screen p-8 md:p-16 bg-gradient-to-br space-y-16">
+    <div className="min-h-screen mt-10 m-2 ">
+      <div className="max-w-full mx-auto flex flex-col lg:flex-row mt-14 mb-10">
+        <motion.section
+          id="comunidade"
+          className="relative max-w-7xl max-h-max mx-auto rounded-3xl shadow-2xl overflow-hidden"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          {/* Imagem de fundo */}
+          <div className="absolute inset-0">
+            <img
+              src="src/assets/image-comunidade.jpg"
+              alt="Comunidade"
+              className="w-full h-full object-cover opacity-100"
+            />
+          </div>
 
-<motion.section
-  id="comunidade"
-  className="relative max-w-7xl mx-auto rounded-xl shadow-2xl overflow-hidden"
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
->
-  {/* Imagem de fundo */}
-  <div className="absolute inset-0">
-    <img
-      src="src/assets/image-comunidade.jpg"
-      alt="Comunidade"
-      className="w-full h-full object-cover opacity-100"
-    />
-  </div>
+          {/* Seção Principal */}
+          <div className="relative p-8 md:p-12 flex flex-col-reverse md:flex-row items-center justify-between z-10">
+            {/* Texto e Botão */}
+            <div className="w-full md:w-2/5  space-y-6">
+              <h1 className="text-3xl md:text-5xl font-black leading-tight text-white mb-8">
+                <span className="text-[#3c297a]">
+                  Conheça a Holodeck Community
+                </span>
+              </h1>
+              <p className="text-base md:text-justify text-white mb-6">
+                A Holodeck é uma comunidade vibrante de entusiastas de
+                tecnologia e inovação no norte do Brasil. Nossa missão é reunir
+                pessoas apaixonadas por tecnologia, promovendo eventos, projetos
+                colaborativos e aprendizado contínuo.
+              </p>
+              <motion.button
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
+                whileHover={{ scale: 1.05 }}
+              >
+                Explore Mais
+              </motion.button>
+            </div>
 
-  {/* Seção Principal */}
-  <div className="relative p-8 md:p-12 flex flex-col-reverse md:flex-row items-center justify-between z-10">
-    {/* Texto e Botão */}
-    <div className="w-full md:w-1/2 space-y-6">
-      <h1 className="text-3xl md:text-5xl font-black leading-tight text-white mb-4">
-      <span className="text-[#3c297a]">Conheça a Holodeck Technologies</span>
-      </h1>
-      <p className="text-base md:text-lg text-white mb-6">
-        A Holodeck é uma comunidade vibrante de entusiastas de tecnologia e inovação no norte do Brasil. Nossa missão é reunir pessoas apaixonadas por tecnologia, promovendo eventos, projetos colaborativos e aprendizado contínuo.
-      </p>
-      <motion.button
-        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
-        whileHover={{ scale: 1.05 }}
-      >
-        Explore Mais
-      </motion.button>
-    </div>
+            {/* Imagem de Fundo com Opacidade Reduzida */}
+            <div className="relative w-full md:w-1/2"></div>
+          </div>
 
-    {/* Imagem de Fundo com Opacidade Reduzida */}
-    <div className="relative w-full md:w-1/2">
-    </div>
-  </div>
+          {/* Seção de Estatísticas */}
+          <div className="relative flex flex-col md:flex-row items-center justify-around p-2 md:p-12 bg-[#191825] border-t-8 border-[#a9e916]  z-10">
+            <div className="text-center flex-1 mb-2 md:mb-0">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white">
+                80%
+              </h2>
+              <p className="text-sm font-light text-gray-300">Engajamento</p>
+            </div>
+            <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
+            <div className="text-center flex-1 mb-6 md:mb-0">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white">
+                3
+              </h2>
+              <p className="text-sm font-light text-gray-300">
+                Projetos Completos
+              </p>
+            </div>
+            <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
+            <div className="text-center flex-1">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white">
+                76+
+              </h2>
+              <p className="text-sm font-light text-gray-300">Colaboradores</p>
+            </div>
+          </div>
+        </motion.section>
+      </div>
 
-  {/* Seção de Estatísticas */}
-  <div className="relative flex flex-col md:flex-row items-center justify-around p-8 md:p-12 bg-[#191825] border-t-8 border-[#a9e916] mt-56 z-10">
-    <div className="text-center flex-1 mb-6 md:mb-0">
-      <h2 className="text-2xl md:text-3xl font-semibold text-white">80%</h2>
-      <p className="text-sm font-light text-gray-300">Engajamento</p>
-    </div>
-    <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
-    <div className="text-center flex-1 mb-6 md:mb-0">
-      <h2 className="text-2xl md:text-3xl font-semibold text-white">3</h2>
-      <p className="text-sm font-light text-gray-300">Projetos Completos</p>
-    </div>
-    <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
-    <div className="text-center flex-1">
-      <h2 className="text-2xl md:text-3xl font-semibold text-white">76+</h2>
-      <p className="text-sm font-light text-gray-300">Colaboradores</p>
-    </div>
-  </div>
-</motion.section>
+      {/* Container principal para ambas as seções */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row mt-14 mb-10">
+        {/* Seção 1: Seja um Colaborador */}
+        <motion.section
+          id="colaborador"
+          className="relative md:max-w-full flex-1 rounded-3xl shadow-lg overflow-hidden flex items-center m-2"
+          initial={{ opacity: 0, y: 90 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #7b39d8, #3e34af, #7152ff)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "300px",
+          }}
+        >
+          {/* Div para o conteúdo de texto à esquerda */}
+          <div className="flex-grow mt-5 p-9 sm:p-5 md:p-6 lg:p-8 xl:p-10 text-left  ">
+            <FloatingIcons />
+            <br />
 
-      {/* Seção 2: Seja um Colaborador */}
-      <section id="colaborador" className="max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Seja um Colaborador</h1>
-        <p className="text-gray-700 mb-6">
-          A colaboração é a essência da nossa comunidade. Estamos sempre à procura de indivíduos talentosos e motivados que desejam fazer a diferença. 
-          Como colaborador, você terá a oportunidade de liderar iniciativas, participar de projetos de código aberto e contribuir para o crescimento da comunidade.
-        </p>
-        <div className="bg-[#3c297a] text-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Contribua com a Holodeck</h2>
-          <p className="text-white mb-4">
-            A sua contribuição pode ter um impacto significativo. Ajude-nos a transformar a Holodeck em um farol de inovação e tecnologia. 
-            Participe de nossos projetos e ajude a moldar o futuro.
-          </p>
-          <button className="bg-white text-[#3c297a] py-2 px-4 rounded-md shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            Saiba Mais
-          </button>
+            <div className="w-full md:w-1/2 mb-9 mt-20">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl mt-20 font-semibold text-white">
+                Encontre e Colabore com sua equipe em Holodeck
+              </h1>
+
+              <p className="mt-11 mb-4 text-white font-light leading-relaxed">
+                Conecte-se com toda a equipe e colabore no desenvolvimento de
+                projetos colaborativos, fortalecendo seu conhecimento e
+                compartilhando com todos.
+              </p>
+              <button
+                onClick={() => navigate("/Collaborator.jsx")}
+                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-6 sm:py-3 sm:px-8 rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
+              >
+                Saiba Mais
+              </button>
+            </div>
+          </div>
+        </motion.section>
+      </div>
+
+      {/* Seção de Projetos */}
+      <section className=" max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="bg-gradient-to-br from-purple-500 to-purple-700 p-8 rounded-3xl flex flex-col items-center shadow-xl hover:shadow-2xl transition duration-300">
+          <img
+            src="src/assets/laptop-com-icone-de-codigo.avif"
+            alt="Oculus Rift / Rift S"
+            className="w-28 h-28 mb-4"
+          />
+          <span className="text-white text-lg font-semibold">
+            Oculus Rift / Rift S
+          </span>
+        </div>
+        <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-8 rounded-3xl flex flex-col items-center shadow-xl hover:shadow-2xl transition duration-300">
+          <img
+            src="src/assets/laptop-com-icone-de-codigo.avif"
+            alt="Oculus Quest"
+            className="w-28 h-28 mb-4"
+          />
+          <span className="text-white text-lg font-semibold">Oculus Quest</span>
+        </div>
+        <div className="bg-gradient-to-br from-yellow-500 to-yellow-700 p-8 rounded-3xl flex flex-col items-center shadow-xl hover:shadow-2xl transition duration-300">
+          <img
+            src="src/assets/laptop-com-icone-de-codigo.avif"
+            alt="Index, Vive"
+            className="w-28 h-28 mb-4"
+          />
+          <span className="text-white text-lg font-semibold">Index, Vive</span>
         </div>
       </section>
 
       {/* Seção 3: Contato */}
-      <section id="contato" className="max-w-4xl mx-auto">
+      <section id="contato" className="max-w-4xl mx-auto mt-20 mb-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="p-6 md:p-8 rounded-lg border border-gray-300 shadow-lg bg-gray-100 bg-opacity-80"
         >
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Entre em Contato Conosco</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Entre em Contato Conosco
+          </h1>
           <p className="text-gray-700 mb-6">
-            Acreditamos que a comunicação é a chave para o sucesso. Se você tiver alguma dúvida, sugestão ou apenas quiser bater um papo sobre tecnologia, não hesite em nos contatar!
+            Acreditamos que a comunicação é a chave para o sucesso. Se você
+            tiver alguma dúvida, sugestão ou apenas quiser bater um papo sobre
+            tecnologia, não hesite em nos contatar!
           </p>
 
           <form className="space-y-6">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
-                <label htmlFor="nome" className="block text-gray-700">Nome:</label>
+                <label htmlFor="nome" className="block text-gray-700">
+                  Nome:
+                </label>
                 <input
                   type="text"
                   id="nome"
@@ -109,7 +184,9 @@ const Community = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-gray-700">E-mail:</label>
+                <label htmlFor="email" className="block text-gray-700">
+                  E-mail:
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -119,7 +196,9 @@ const Community = () => {
                 />
               </div>
               <div>
-                <label htmlFor="assunto" className="block text-gray-700">Assunto:</label>
+                <label htmlFor="assunto" className="block text-gray-700">
+                  Assunto:
+                </label>
                 <input
                   type="text"
                   id="assunto"
@@ -129,7 +208,9 @@ const Community = () => {
                 />
               </div>
               <div className="md:col-span-2">
-                <label htmlFor="mensagem" className="block text-gray-700">Mensagem:</label>
+                <label htmlFor="mensagem" className="block text-gray-700">
+                  Mensagem:
+                </label>
                 <textarea
                   id="mensagem"
                   name="mensagem"
@@ -149,22 +230,62 @@ const Community = () => {
           </form>
 
           <div className="mt-8">
-            <h2 className="text-lg md:text-xl font-bold text-gray-900">Informações de Contato:</h2>
-            <p className="text-gray-700 mt-2">E-mail: <a href="mailto:holodeckcomunity@gmail.com" className="text-[#3c297a] hover:underline">holodeckcomunity@gmail.com</a></p>
-            <p className="text-gray-700">Telefone: <a href="tel:+5592993007673" className="text-[#372578] hover:underline"> +5592993007673</a></p>
-            <p className="text-gray-700">Endereço: xx xxxxx, xxx, Alvorada, Manaus, AM</p>
+            <h2 className="text-lg md:text-xl font-bold text-gray-900">
+              Informações de Contato:
+            </h2>
+            <p className="text-gray-700 mt-2">
+              E-mail:{" "}
+              <a
+                href="mailto:holodeckcomunity@gmail.com"
+                className="text-[#3c297a] hover:underline"
+              >
+                holodeckcomunity@gmail.com
+              </a>
+            </p>
+            <p className="text-gray-700">
+              Telefone:{" "}
+              <a
+                href="tel:+5592993007673"
+                className="text-[#372578] hover:underline"
+              >
+                {" "}
+                +5592993007673
+              </a>
+            </p>
+            <p className="text-gray-700">
+              Endereço: xx xxxxx, xxx, Alvorada, Manaus, AM
+            </p>
           </div>
 
           <div className="mt-8">
-            <h2 className="text-lg md:text-xl font-bold text-gray-900">Redes Sociais:</h2>
+            <h2 className="text-lg md:text-xl font-bold text-gray-900">
+              Redes Sociais:
+            </h2>
             <ul className="flex flex-wrap gap-4 mt-2">
-              <li><a href="https://www.linkedin.com/in/holodeck-technologies-community?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="text-[#372578] hover:underline">LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/holodeckcommunity/profilecard/?igsh=bzJ6Zmlua3h3aHQ=" target="_blank" rel="noopener noreferrer" className="text-[#3c297a] hover:underline">Instagram</a></li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/holodeck-technologies-community?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#372578] hover:underline"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/holodeckcommunity/profilecard/?igsh=bzJ6Zmlua3h3aHQ="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#3c297a] hover:underline"
+                >
+                  Instagram
+                </a>
+              </li>
             </ul>
           </div>
         </motion.div>
       </section>
-
     </div>
   );
 };
