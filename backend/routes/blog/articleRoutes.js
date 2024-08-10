@@ -39,7 +39,7 @@
 
 
 import express from 'express';
-import articleController from '../controllers/articleController.js'; 
+import articleController from '../../controllers/blog/articleController.js'; 
 
 const router = express.Router();
 

@@ -4,9 +4,9 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'NYTimes Article Search API',
+      title: 'Article Search API',
       version: '1.0.0',
-      description: 'API para buscar artigos da NYTimes por categoria.',
+      description: 'API para buscar artigos .',
     },
   },
   apis: ['./routes/*.js'], // Caminho para os arquivos que contêm as rotas e comentários JSDoc
