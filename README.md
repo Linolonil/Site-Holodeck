@@ -20,6 +20,7 @@ holodeck-site/
   ├── public/
   ├── src/
   │   ├── assets/                  # Imagens e arquivos estáticos
+  │   │   │   ├── icons            # Icons
   │   │   ├── info-tech.png
   │   │   ├── logo-sem-fundo.png
   │   │   └── logo.png
