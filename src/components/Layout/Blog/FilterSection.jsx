@@ -28,22 +28,23 @@ function FilterSection({ setCategory, setError }) {
 
   const categoriesToShow = showAllCategories
     ? filteredCategories
-    : filteredCategories.slice(0, 6);
+    : filteredCategories.slice(0, 3);
+    
 
   return (
     <>
-      <div className="flex items-center justify-between bg-transparent mb-5">
-        <h3 className="text-4xl font-bold text-gray-900 border-b-4 border-[#8419c5] pb-2">
+      <div className=" py-2 lg:flex lg:items-center lg:justify-between bg-transparent mb-5">
+        <h3 className="text-4xl font-bold text-gray-900 border-b-4 border-[#a9e916] pb-2">
           Latest Articles
         </h3>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 pt-5 lg:pt-0 justify-end">
           <input
             type="text"
             placeholder="Search category..."
             value={searchTerm}
             onChange={handleSearchChange}
-            className="bg-gray-100 px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#8419c5]"
+            className="bg-gray-100 px-4 py-2 rounded-full border w-full border-gray-300 focus:outline-none focus:border-[#8419c5]"
           />
           <button
             key="toggle-button"
@@ -62,7 +63,7 @@ function FilterSection({ setCategory, setError }) {
             categoriesToShow.map((el) => (
               <motion.button
                 key={el.value}
-                className={`mt-4 inline-block px-4 py-3  font-bold rounded-lg shadow-lg hover:bg-gray-600 transition-colors duration-300 ${selectedCategory === el.value ? "bg-gray-500 text-white" : "bg-[#8319c5da] text-white"}`}
+                className={`mt-4 inline-block px-4 py-3  font-bold rounded-lg shadow-lg hover:bg-gray-600 transition-colors duration-300 ${selectedCategory === el.value ? "bg-gray-500 text-white" : "bg-[#3c297a] text-white"}`}
                 onClick={() => handleCategoryChange(el.value)}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
