@@ -47,7 +47,7 @@ const Blog = () => {
       {/* Seção de Artigos Recentes */}
       <section className="container mx-auto px-6 my-12">
         {/* Filtro dos Artigos */}
-        <FilterSection setCategory={setCategory} />
+        <FilterSection setCategory={setCategory}  setError={setError}/>
 
         {/* Lista de Artigos */}
         <ArticlesSection articles={articles} loading={loading} error={error} />

@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { btnClose, btnMore, listCategory } from "../../../assets/Blog/assets";
 
-function FilterSection({ setCategory }) {
+function FilterSection({ setCategory, setError }) {
   const [showAllCategories, setShowAllCategories] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleCategoryChange = (category) => {
+    setError(false)
     setCategory(category);
     setSelectedCategory(category);
   };
@@ -84,6 +85,7 @@ function FilterSection({ setCategory }) {
 
 FilterSection.propTypes = {
   setCategory: PropTypes.func.isRequired,
+  setError: PropTypes.func.isRequired,
 };
 
 export default FilterSection;
