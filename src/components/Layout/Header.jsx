@@ -60,7 +60,7 @@ const Header = () => {
             Contato
           </a> */}
           <a
-            href="/community-join"
+            href="/communityjoin"
             className="hover:text-gray-200 transition-colors duration-200"
           >
             Comunidade
@@ -169,7 +169,7 @@ const Header = () => {
             <span>Contato</span>
           </a> */}
           <a
-            href="/community-join"
+            href="/communityjoin"
             onClick={toggleMenu}
             className="hover:text-gray-200 transition border-b border-lime-500 py-2 w-full text-right flex items-center space-x-2"
           >

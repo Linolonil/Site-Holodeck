@@ -17,7 +17,7 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/community-join" element={<CommunityJoin />} />
+        <Route path="/communityjoin" element={<CommunityJoin />} />
         <Route path="/collaborator" element={<Collaborator />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/events" element={<Events />} />

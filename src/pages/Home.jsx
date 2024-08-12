@@ -67,7 +67,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex-1 bg-gray-100 bg-opacity-80 p-6 rounded-lg shadow-md flex flex-col items-center text-center max-w-4xl"
+          className="flex-1 bg-gray-100 bg-opacity-80 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center max-w-4xl"
         >
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">Últimos Projetos</h2>
           <p className="text-base sm:text-lg text-gray-700 mb-6">

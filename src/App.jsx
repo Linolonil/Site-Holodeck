@@ -6,6 +6,7 @@ import Header from '../src/components/Layout/Header';
 import Footer from './components/Layout/Footer'; // Importe o Footer
 import './styles/index.css'; // Importe o CSS do Tailwind aqui
 
+
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen relative">  
