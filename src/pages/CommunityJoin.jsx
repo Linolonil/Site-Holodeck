@@ -2,14 +2,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import FloatingIcons from "../components/Layout/Collaborator/FloatingIcons"; // Ajuste o caminho conforme necessário
+import CarouselSection from "../components/Layout/Collaborator/CarouselSection";
 
 const Community = () => {
   return (
-    <div className="min-h-screen mt-10 m-2 ">
-      <div className="max-w-full mx-auto flex flex-col lg:flex-row mt-14 mb-10">
+    <div className="min-h-screen">
+      <div className="max-w-full justify-center m-2 flex flex-col lg:flex-row mt-5 lg:mt-14 mb-10">
         <motion.section
           id="comunidade"
-          className="relative max-w-7xl max-h-max mx-auto rounded-3xl shadow-2xl overflow-hidden"
+          className="relative max-w-7xl max-h-max rounded-3xl shadow-2xl overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -24,7 +25,7 @@ const Community = () => {
           </div>
 
           {/* Seção Principal */}
-          <div className="relative p-8 md:p-12 flex flex-col-reverse md:flex-row items-center justify-between z-10">
+          <div className="relative p-8 md:p-12 flex flex-col-reverse md:flex-row items-center justify-center z-10">
             {/* Texto e Botão */}
             <div className="w-full md:w-2/5  space-y-6">
               <h1 className="text-3xl md:text-5xl font-black leading-tight text-white mb-8">
@@ -38,12 +39,17 @@ const Community = () => {
                 pessoas apaixonadas por tecnologia, promovendo eventos, projetos
                 colaborativos e aprendizado contínuo.
               </p>
-              <motion.button
-                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
+
+              <br></br>
+              <br></br>
+
+              <motion.a
+                href="/communityjoin"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 px-6 rounded-xl font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
                 whileHover={{ scale: 1.05 }}
               >
                 Explore Mais
-              </motion.button>
+              </motion.a>
             </div>
 
             {/* Imagem de Fundo com Opacidade Reduzida */}
@@ -79,11 +85,11 @@ const Community = () => {
       </div>
 
       {/* Container principal para ambas as seções */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row mt-14 mb-10">
+      <div className="max-w-full m-2 flex flex-col lg:flex-row mt-14 mb-10">
         {/* Seção 1: Seja um Colaborador */}
         <motion.section
           id="colaborador"
-          className="relative md:max-w-full flex-1 rounded-3xl shadow-lg overflow-hidden flex items-center m-2"
+          className="relative max-w-7xl max-h-max mx-auto rounded-3xl shadow-2xl overflow-hidden"
           initial={{ opacity: 0, y: 90 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
@@ -111,45 +117,21 @@ const Community = () => {
                 projetos colaborativos, fortalecendo seu conhecimento e
                 compartilhando com todos.
               </p>
-              <button
-                onClick={() => navigate("/Collaborator.jsx")}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-6 sm:py-3 sm:px-8 rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
+
+              <a
+                href="/projects"
+                className="inline-block px-6 py-3 bg-[#3c297a] text-white font-semibold rounded-lg shadow-lg hover:bg-[#606060] transition-colors duration-300"
               >
-                Saiba Mais
-              </button>
+                Explore Projetos
+              </a>
             </div>
           </div>
         </motion.section>
       </div>
 
       {/* Seção de Projetos */}
-      <section className=" max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-gradient-to-br from-purple-500 to-purple-700 p-8 rounded-3xl flex flex-col items-center shadow-xl hover:shadow-2xl transition duration-300">
-          <img
-            src="src/assets/laptop-com-icone-de-codigo.avif"
-            alt="Oculus Rift / Rift S"
-            className="w-28 h-28 mb-4"
-          />
-          <span className="text-white text-lg font-semibold">
-            Oculus Rift / Rift S
-          </span>
-        </div>
-        <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-8 rounded-3xl flex flex-col items-center shadow-xl hover:shadow-2xl transition duration-300">
-          <img
-            src="src/assets/laptop-com-icone-de-codigo.avif"
-            alt="Oculus Quest"
-            className="w-28 h-28 mb-4"
-          />
-          <span className="text-white text-lg font-semibold">Oculus Quest</span>
-        </div>
-        <div className="bg-gradient-to-br from-yellow-500 to-yellow-700 p-8 rounded-3xl flex flex-col items-center shadow-xl hover:shadow-2xl transition duration-300">
-          <img
-            src="src/assets/laptop-com-icone-de-codigo.avif"
-            alt="Index, Vive"
-            className="w-28 h-28 mb-4"
-          />
-          <span className="text-white text-lg font-semibold">Index, Vive</span>
-        </div>
+      <section className=" bg-[#EBF8FF] max-w-full">
+        <CarouselSection />
       </section>
 
       {/* Seção 3: Contato */}
