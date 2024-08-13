@@ -135,7 +135,7 @@ const Community = () => {
       </section>
 
       {/* Seção 3: Contato */}
-      <section id="contato" className="max-w-4xl mx-auto mt-20 mb-10">
+      <section id="contato" className="max-w-full m-2 flex flex-col lg:flex-row mt-14 mb-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
