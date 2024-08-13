@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import imgDefault from "../../../assets/logo-sem-fundo.png";
+import imgDefault from "../Blog/ArticleMain";
 function ArticlesSection({ articles, loading, error }) {
   const defaultImage = imgDefault;
   return (
