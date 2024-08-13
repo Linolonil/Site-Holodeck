@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import { btnClose, btnMore, listCategory } from "../../../assets/Blog/assets";
+import { btnClose, btnMore, listCategory } from "../../Layout/Blog/CategoriesAndArticles.jsx";
 
 function FilterSection({ setCategory, setError }) {
   const [showAllCategories, setShowAllCategories] = useState(false);
