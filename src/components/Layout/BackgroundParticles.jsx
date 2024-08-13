@@ -114,7 +114,7 @@ const BackgroundParticles = () => {
       requestAnimationFrame(animate);
     };
 
-    // Atualizar a cena quando a janela for redimensionada
+    // Atualizar a cena quando a janela for redimensionada (metade da tela)
     const handleResize = () => {
       renderer.setSize(window.innerWidth, window.innerHeight);
       camera.aspect = window.innerWidth / window.innerHeight;
