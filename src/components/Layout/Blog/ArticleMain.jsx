@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { useRef } from "react";
-import { articlesMain} from "../../../assets/Blog/assets.jsx"
+import { articlesMain } from "../../Layout/Blog/CategoriesAndArticles.jsx"
 import "./styles.css"
 import "swiper/css";
 import "swiper/css/navigation";
