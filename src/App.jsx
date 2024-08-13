@@ -9,7 +9,7 @@ import "./styles/index.css"; // Importe o CSS do Tailwind aqui
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen relative">
-      <BackgroundParticles />
+      {/* <BackgroundParticles /> */}
       <div className="flex-grow relative z-10">
       <Header />
         <AppRouter />

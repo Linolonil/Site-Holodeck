@@ -1,272 +1,144 @@
 // src/pages/Community.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import FloatingIcons from "../components/Layout/Collaborator/FloatingIcons"; // Ajuste o caminho conforme necessário
 import CarouselSection from "../components/Layout/Collaborator/CarouselSection";
 
 const Community = () => {
   return (
-    <div className="min-h-screen">
-      <div className="max-w-full justify-center m-2 flex flex-col lg:flex-row mt-5 lg:mt-14 mb-10">
-        <motion.section
-          id="comunidade"
-          className="relative max-w-7xl max-h-max rounded-3xl shadow-2xl overflow-hidden"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          {/* Imagem de fundo */}
-          <div className="absolute inset-0">
-            <img
-              src="src/assets/image-comunidade.jpg"
-              alt="Comunidade"
-              className="w-full h-full object-cover opacity-100"
-            />
+    <div className="min-h-screen bg-gradient-to-r from-[#3e34af] to-[#7b39d8]">
+{/* Hero Section */}
+<section id="comunidade" className="relative flex items-center justify-center h-screen bg-white">
+  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('src/assets/image-comunidade-2.jpg')" }}></div>
+  
+  <div className="relative z-10 text-center p-8 max-w-4xl mx-4 bg-white bg-opacity-70 rounded-xl shadow-lg">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">Aprenda. Conecte-se. Cresça.</h1>
+    <p className="text-lg md:text-xl text-gray-700 mt-4">Junte-se a uma comunidade que valoriza a inovação e a colaboração para impulsionar sua carreira no mundo da tecnologia.</p>
+    
+    {/* Action Buttons */}
+    <div className="mt-8 flex  flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 justify-center">
+      <a
+        href="#colaborador"
+        className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300"
+      >
+        Seja um Colaborador
+      </a>
+      <a
+        href="#eventos"
+        className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold border border-blue-600 rounded-lg shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300"
+      >
+        Conheça Nossos Eventos
+      </a>
+      <a
+        href="#projetos"
+        className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold border border-blue-600 rounded-lg shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300"
+      >
+        Veja Nossos Projetos
+      </a>
+    </div>
+  </div>
+  
+  {/* Additional Visuals */}
+  <div className="absolute bottom-0 left-0 right-0 p-4 text-center text-gray-100">
+    <p className="text-sm">Impulsionando a próxima geração de desenvolvedores e inovadores</p>
+  </div>
+</section>
+
+      {/* Mission Section */}
+      <section className="container mx-auto py-16 px-6 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6">
+            <h2 className="text-4xl font-black">Nossa Missão</h2>
+            <p className="text-lg font-medium ">
+              A Holodeck é uma comunidade vibrante de entusiastas de tecnologia e inovação no norte do Brasil.
+              Nossa missão é reunir pessoas apaixonadas por tecnologia, promovendo eventos, projetos colaborativos e aprendizado contínuo.
+            </p>
           </div>
-
-          {/* Seção Principal */}
-          <div className="relative p-8 md:p-12 flex flex-col-reverse md:flex-row items-center justify-center z-10">
-            {/* Texto e Botão */}
-            <div className="w-full md:w-2/5  space-y-6">
-              <h1 className="text-3xl md:text-5xl font-black leading-tight text-white mb-8">
-                <span className="text-[#3c297a]">
-                  Conheça a Holodeck Community
-                </span>
-              </h1>
-              <p className="text-base md:text-justify text-white mb-6">
-                A Holodeck é uma comunidade vibrante de entusiastas de
-                tecnologia e inovação no norte do Brasil. Nossa missão é reunir
-                pessoas apaixonadas por tecnologia, promovendo eventos, projetos
-                colaborativos e aprendizado contínuo.
-              </p>
-
-              <br></br>
-              <br></br>
-
-              <motion.a
-                href="/communityjoin"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 px-6 rounded-xl font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
-                whileHover={{ scale: 1.05 }}
-              >
-                Explore Mais
-              </motion.a>
-            </div>
-
-            {/* Imagem de Fundo com Opacidade Reduzida */}
-            <div className="relative w-full md:w-1/2"></div>
+          <div>
+            <img src="src/assets/image-comunidade.jpg" alt="Missão" className="w-full rounded-lg shadow-lg" />
           </div>
-
-          {/* Seção de Estatísticas */}
-          <div className="relative flex flex-col md:flex-row items-center justify-around p-2 md:p-12 bg-[#191825] border-t-8 border-[#a9e916]  z-10">
-            <div className="text-center flex-1 mb-2 md:mb-0">
-              <h2 className="text-2xl md:text-3xl font-semibold text-white">
-                80%
-              </h2>
-              <p className="text-sm font-light text-gray-300">Engajamento</p>
-            </div>
-            <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
-            <div className="text-center flex-1 mb-6 md:mb-0">
-              <h2 className="text-2xl md:text-3xl font-semibold text-white">
-                3
-              </h2>
-              <p className="text-sm font-light text-gray-300">
-                Projetos Completos
-              </p>
-            </div>
-            <div className="border-r border-gray-700 h-8 md:h-12 mx-4 hidden md:block"></div>
-            <div className="text-center flex-1">
-              <h2 className="text-2xl md:text-3xl font-semibold text-white">
-                76+
-              </h2>
-              <p className="text-sm font-light text-gray-300">Colaboradores</p>
-            </div>
-          </div>
-        </motion.section>
-      </div>
-
-      {/* Container principal para ambas as seções */}
-      <div className="max-w-full m-2 flex flex-col lg:flex-row mt-14 mb-10">
-        {/* Seção 1: Seja um Colaborador */}
-        <motion.section
-          id="colaborador"
-          className="relative max-w-7xl max-h-max mx-auto rounded-3xl shadow-2xl overflow-hidden"
-          initial={{ opacity: 0, y: 90 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #7b39d8, #3e34af, #7152ff)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            minHeight: "300px",
-          }}
-        >
-          {/* Div para o conteúdo de texto à esquerda */}
-          <div className="flex-grow mt-5 p-9 sm:p-5 md:p-6 lg:p-8 xl:p-10 text-left  ">
-            <FloatingIcons />
-            <br />
-
-            <div className="w-full md:w-1/2 mb-9 mt-20">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl mt-20 font-semibold text-white">
-                Encontre e Colabore com sua equipe em Holodeck
-              </h1>
-
-              <p className="mt-11 mb-4 text-white font-light leading-relaxed">
-                Conecte-se com toda a equipe e colabore no desenvolvimento de
-                projetos colaborativos, fortalecendo seu conhecimento e
-                compartilhando com todos.
-              </p>
-
-              <a
-                href="/projects"
-                className="inline-block px-6 py-3 bg-[#3c297a] text-white font-semibold rounded-lg shadow-lg hover:bg-[#606060] transition-colors duration-300"
-              >
-                Explore Projetos
-              </a>
-            </div>
-          </div>
-        </motion.section>
-      </div>
-
-      {/* Seção de Projetos */}
-      <section className=" bg-[#EBF8FF] max-w-full">
-        <CarouselSection />
+        </div>
       </section>
 
-      {/* Seção 3: Contato */}
-      <section id="contato" className="max-w-full m-2 flex flex-col lg:flex-row mt-14 mb-10 justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="p-6 md:p-8 rounded-lg border border-gray-300 shadow-lg bg-gray-100 bg-opacity-80"
-        >
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Entre em Contato Conosco
-          </h1>
-          <p className="text-gray-700 mb-6">
-            Acreditamos que a comunicação é a chave para o sucesso. Se você
-            tiver alguma dúvida, sugestão ou apenas quiser bater um papo sobre
-            tecnologia, não hesite em nos contatar!
-          </p>
+      {/* Projects Section */}
+      <section id="projetos" className="bg-white py-16">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Nossos Projetos</h2>
+          <CarouselSection />
+        </div>
+      </section>
 
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div>
-                <label htmlFor="nome" className="block text-gray-700">
-                  Nome:
-                </label>
-                <input
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-gray-700">
-                  E-mail:
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="assunto" className="block text-gray-700">
-                  Assunto:
-                </label>
-                <input
-                  type="text"
-                  id="assunto"
-                  name="assunto"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                  required
-                />
-              </div>
-              <div className="md:col-span-2">
-                <label htmlFor="mensagem" className="block text-gray-700">
-                  Mensagem:
-                </label>
-                <textarea
-                  id="mensagem"
-                  name="mensagem"
-                  rows="4"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                  required
-                ></textarea>
-              </div>
+     {/* Testimonials Section */}
+<section className="bg-gray-100 py-16">
+  <div className="container mx-auto text-center">
+    <h2 className="text-4xl font-bold text-gray-800 mb-12">O que dizem nossos membros</h2>
+    <div className="flex flex-col md:flex-row mx-4 justify-center space-y-6 md:space-y-0 md:space-x-6">
+      {/* Small Card */}
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg md:w-1/3">
+        <p className="text-gray-700">"Participar da Holodeck foi um divisor de águas para minha carreira. A colaboração e apoio da comunidade são inigualáveis."</p>
+        <p className="mt-4 font-semibold text-gray-800">- Pedro Lima</p>
+      </div>
+      {/* Medium Card */}
+      <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg md:w-1/2">
+        <p className="text-gray-700">"A Holodeck me deu a oportunidade de aprender e compartilhar conhecimento em um ambiente acolhedor e inovador."</p>
+        <p className="mt-4 font-semibold text-gray-800">- Ana Costa</p>
+      </div>
+      {/* Large Card */}
+      <div className="bg-white p-8 md:p-10 rounded-lg shadow-lg md:w-2/3">
+        <p className="text-gray-700">"Sou muito grato por fazer parte dessa comunidade. A experiência tem sido enriquecedora em todos os sentidos, e me sinto constantemente desafiado e inspirado."</p>
+        <p className="mt-4 font-semibold text-gray-800">- Lucas Fernandes</p>
+      </div>
+    </div>
+
+    {/* Another Row with Diverse Sizes */}
+    <div className="flex flex-col md:flex-row justify-center mx-4 space-y-6 md:space-y-0 md:space-x-6 mt-12">
+      {/* Large Card */}
+      <div className="bg-white p-8 md:p-10 rounded-lg shadow-lg md:w-2/3">
+        <p className="text-gray-700">"A comunidade da Holodeck tem sido um verdadeiro suporte na minha jornada profissional. A energia colaborativa é contagiante e inspiradora."</p>
+        <p className="mt-4 font-semibold text-gray-800">- Júlia Martins</p>
+      </div>
+      {/* Small Card */}
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg md:w-1/3">
+        <p className="text-gray-700">"O networking aqui é incrível. Consegui me conectar com pessoas talentosas e dispostas a compartilhar seu conhecimento."</p>
+        <p className="mt-4 font-semibold text-gray-800">- Felipe Rocha</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      {/* Contact Section */}
+      <section id="contato" className="bg-gradient-to-r from-[#3e34af] to-[#7b39d8] py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="text-white space-y-6">
+              <h2 className="text-4xl font-bold">Entre em Contato</h2>
+              <p>Estamos sempre prontos para ouvir suas ideias e responder suas perguntas. Sinta-se à vontade para entrar em contato conosco!</p>
+              <ul className="space-y-4">
+                <li>Email: <a href="mailto:holodeckcomunity@gmail.com" className="underline">holodeckcomunity@gmail.com</a></li>
+                <li>Telefone: <a href="tel:+5592993007673" className="underline">+5592993007673</a></li>
+                <li>Endereço: xx xxxxx, xxx, Alvorada, Manaus, AM</li>
+              </ul>
             </div>
-
-            <button
-              type="submit"
-              className="w-full bg-[#3c297a] text-white py-2 px-4 rounded-md shadow-md hover:bg-[#3c297a] focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              Enviar Mensagem
-            </button>
-          </form>
-
-          <div className="mt-8">
-            <h2 className="text-lg md:text-xl font-bold text-gray-900">
-              Informações de Contato:
-            </h2>
-            <p className="text-gray-700 mt-2">
-              E-mail:{" "}
-              <a
-                href="mailto:holodeckcomunity@gmail.com"
-                className="text-[#3c297a] hover:underline"
-              >
-                holodeckcomunity@gmail.com
-              </a>
-            </p>
-            <p className="text-gray-700">
-              Telefone:{" "}
-              <a
-                href="tel:+5592993007673"
-                className="text-[#372578] hover:underline"
-              >
-                {" "}
-                +5592993007673
-              </a>
-            </p>
-            <p className="text-gray-700">
-              Endereço: xx xxxxx, xxx, Alvorada, Manaus, AM
-            </p>
+            <div>
+              <form className="bg-white p-6 rounded-lg shadow-lg space-y-4">
+                <div>
+                  <label htmlFor="nome" className="block text-gray-700">Nome:</label>
+                  <input 
+                  type="text" id="nome" name="nome" className="w-full p-3 rounded-md shadow-sm border border-gray-300" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-gray-700">Email:</label>
+                  <input type="email" id="email" name="email" className="w-full p-3 rounded-md shadow-sm border border-gray-300" />
+                </div>
+                <div>
+                  <label htmlFor="mensagem" className="block text-gray-700">Mensagem:</label>
+                  <textarea id="mensagem" name="mensagem" rows="4" className="w-full p-3 rounded-md shadow-sm border border-gray-300"></textarea>
+                </div>
+                <button type="submit" className="w-full py-3 bg-blue-600 text-white font-semibold rounded-md shadow-lg hover:bg-blue-700">Enviar Mensagem</button>
+              </form>
+            </div>
           </div>
-
-          <div className="mt-8">
-            <h2 className="text-lg md:text-xl font-bold text-gray-900">
-              Redes Sociais:
-            </h2>
-            <ul className="flex flex-wrap gap-4 mt-2">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/holodeck-technologies-community?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#372578] hover:underline"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/holodeckcommunity/profilecard/?igsh=bzJ6Zmlua3h3aHQ="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#3c297a] hover:underline"
-                >
-                  Instagram
-                </a>
-              </li>
-            </ul>
-          </div>
-        </motion.div>
+        </div>
       </section>
     </div>
   );

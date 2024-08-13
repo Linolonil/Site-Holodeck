@@ -3,9 +3,15 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#606060] text-white py-4 text-center">
-      <p className="text-sm">© 2024 Holodeck Tecnologia. Todos os direitos reservados.</p>
-    </footer>
+    <footer className="bg-gray-800 py-8 text-white">
+    <div className="container mx-auto text-center">
+      <p>&copy; 2024 Holodeck Community. Todos os direitos reservados.</p>
+      <div className="mt-4 space-x-4">
+        <a href="https://www.linkedin.com/in/holodeck-technologies-community" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+        <a href="https://www.instagram.com/holodeckcommunity" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a>
+      </div>
+    </div>
+  </footer>
   );
 };
 

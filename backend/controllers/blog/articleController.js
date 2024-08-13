@@ -5,6 +5,7 @@ dotenv.config();
 
 // Configuração da URL base com a chave da API
 const API_KEY = process.env.API_KEY;
+console.log(API_KEY)
 const BASE_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
 // Função para buscar artigos por categoria
