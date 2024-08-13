@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import articleRoutes from './routes/articleRoutes.js';
+import articleRoutes from './routes/blog/articleRoutes.js';
 import swaggerUi from 'swagger-ui-express';
 import specs from './swaggerOption.js';
 

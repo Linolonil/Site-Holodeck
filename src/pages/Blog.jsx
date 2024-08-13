@@ -1,34 +1,56 @@
-// src/pages/blog.jsx
-// import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { useState } from "react";
-import ArticleMain from "../components/ArticleMain.jsx";
-import ArticlesSection from "../components/ArticlesSection.jsx";
-import FilterSection from "../components/FilterSection.jsx";
+import { useEffect, useState } from "react";
+import ArticleMain from "../components/Layout/Blog/ArticleMain.jsx";
+import ArticlesSection from "../components/Layout/Blog/ArticlesSection.jsx";
+import FilterSection from "../components/Layout/Blog/FilterSection.jsx";
+import axios from "axios";
+
+
+// esse cache salva muito, pois reduz o numero de req do backend (temporario)
+const cache = {}; 
+
 
 const Blog = () => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [category, setCategory] = useState("news");
 
-  const [selectedCategory, setSelectedCategory] = useState('');
 
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
+  useEffect(() => {
+    if (category) {
+      if (cache[category]) {
+        setArticles(cache[category]);
+        setLoading(false);
+      } else {
+        setLoading(true);
+        axios
+          .get(`http://localhost:5001/api/articles/category/${category}`)
+          .then((response) => {
+            setArticles(response.data);
+            cache[category] = response.data; // Armazena a resposta no cache
+            setLoading(false);
+          })
+          .catch((error) => {
+            setError("Erro ao carregar artigos!");
+            console.log(error);
+            setLoading(false);
+          });
+      }
+    }
+  }, [category]);
 
   return (
     <div className="min-h-screen bg-transparent">
       {/* Seção de Destaque */}
-      <ArticleMain/>
+      <ArticleMain />
 
       {/* Seção de Artigos Recentes */}
-      <section className="container mx-auto px-6 my-12">
-        <h3 className="text-3xl font-semibold text-gray-800 mb-6">
-          Latest Articles
-        </h3>
-
-        {/*Filtro dos Artigos*/}
-        <FilterSection onCategoryChange={handleCategoryChange}/>
+      <section className="container mx-auto px-3 lg:px-6  my-12">
+        {/* Filtro dos Artigos */}
+        <FilterSection setCategory={setCategory}  setError={setError}/>
 
         {/* Lista de Artigos */}
-        <ArticlesSection category={selectedCategory}/>
+        <ArticlesSection articles={articles} loading={loading} error={error} />
       </section>
     </div>
   );
