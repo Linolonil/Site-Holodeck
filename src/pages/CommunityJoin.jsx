@@ -10,32 +10,26 @@ const Community = () => {
 <section id="comunidade" className="relative flex items-center justify-center h-screen bg-white">
   <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('src/assets/image-comunidade-2.jpg')" }}></div>
   
-  <div className="relative z-10 text-center p-8 max-w-4xl mx-4 bg-white bg-opacity-70 rounded-xl shadow-lg">
-    <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">Aprenda. Conecte-se. Cresça.</h1>
-    <p className="text-lg md:text-xl text-gray-700 mt-4">Junte-se a uma comunidade que valoriza a inovação e a colaboração para impulsionar sua carreira no mundo da tecnologia.</p>
-    
-    {/* Action Buttons */}
-    <div className="mt-8 flex  flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 justify-center">
-      <a
-        href="#colaborador"
-        className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300"
-      >
-        Seja um Colaborador
-      </a>
-      <a
-        href="#eventos"
-        className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold border border-blue-600 rounded-lg shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300"
-      >
-        Conheça Nossos Eventos
-      </a>
-      <a
-        href="#projetos"
-        className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold border border-blue-600 rounded-lg shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300"
-      >
-        Veja Nossos Projetos
-      </a>
-    </div>
+  <div className="relative z-10 text-center p-12 max-w-4xl mx-auto bg-white bg-opacity-70 rounded-xl shadow-lg">
+  <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">Holodeck Community</h1>
+  <p className="text-lg md:text-xl text-gray-700 mt-4">Impulsione o compartilhamento do seu conhecimento. Trabalhe juntos em artigos e projetos, desenvolvendo seu conhecimento e compartilhando suas habilidades.</p>
+  
+  {/* Botão de Ação */}
+  <div className="mt-8">
+    <a
+      href="#access"
+      className="inline-block px-10 py-4 bg-black text-white font-semibold rounded-full shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-black transition duration-300"
+    >
+      Me tornar membro
+    </a>
   </div>
+
+  {/* Texto adicional */}
+  <div className="mt-8 text-gray-600">
+    <p>Conecte-se com nossos fundadores.</p>
+  </div>
+</div>
+
   
   {/* Additional Visuals */}
   <div className="absolute bottom-0 left-0 right-0 p-4 text-center text-gray-100">
