@@ -16,42 +16,49 @@ const QRCodePopup = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-2xl font-semibold mb-4">Entre na Holodeck</h2>
-      <div className="flex space-x-4">
-        <a
-          onClick={(event) =>
-            handleQRCodeClick(event, "https://chat.whatsapp.com/Ew4dOwAS4CJ01xdSaUxAwv")
-          }
-          aria-label="WhatsApp"
-        >
-          <FaWhatsapp className="text-2xl hover:text-gray-400" />
-        </a>
-        <a
-          onClick={(event) =>
-            handleQRCodeClick(event, "https://discord.com/channels/1217480586273488928/1217480586785198111")
-          }
-          aria-label="Discord"
-        >
-          <FaDiscord className="text-2xl hover:text-gray-400" />
-        </a>
-      </div>
+<div>
+  <h2 className="text-2xl font-semibold mb-4">Entre na Holodeck</h2>
+  <div className="flex space-x-4">
+    <button
+      onClick={(event) =>
+        handleQRCodeClick(event, "https://chat.whatsapp.com/Ew4dOwAS4CJ01xdSaUxAwv")
+      }
+      className="relative overflow-hidden flex items-center space-2 px-4 py-2 bg-[#221655] text-white font-bold rounded group"
+      aria-label="WhatsApp"
+    >
+      <span className="absolute inset-0 bg-[#a9e916] transform -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+      <FaWhatsapp className="text-2xl relative z-10" />
+      <span className="relative z-10">WhatsApp</span>
+    </button>
+    <button
+      onClick={(event) =>
+        handleQRCodeClick(event, "https://discord.com/channels/1217480586273488928/1217480586785198111")
+      }
+      className="relative overflow-hidden flex items-center space-2 px-4 py-2 bg-[#221655] text-white font-bold rounded group"
+      aria-label="Discord"
+    >
+      <span className="absolute inset-0 bg-[#a9e916] transform -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+      <FaDiscord className="text-3xl relative z-10" />
+      <span className="relative z-10">Discord</span>
+    </button>
+  </div>
 
-      {showQRCode && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
-          <div className="bg-white p-6 rounded shadow-lg text-center opacity-100">
-            <h3 className="text-lg font-semibold mb-4">Escaneie o QR Code</h3>
-            <QRCode value={showQRCode} size={256} />
-            <button
-              onClick={handleCloseQRCode}
-              className="mt-4 px-4 py-2 bg-[#3c297a] hover:bg-[#a9e916] text-white hover:text-slate-900 font-bold rounded"
-            >
-              Fechar
-            </button>
-          </div>
-        </div>
-      )}
+  {showQRCode && (
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
+      <div className="bg-white p-6 rounded shadow-lg text-center opacity-100">
+        <h3 className="text-lg font-semibold mb-4">Escaneie o QR Code</h3>
+        <QRCode value={showQRCode} size={256} />
+        <button
+          onClick={handleCloseQRCode}
+          className="mt-4 px-4 py-2 bg-[#3c297a] hover:bg-[#a9e916] text-white hover:text-slate-900 font-bold rounded"
+        >
+          Fechar
+        </button>
+      </div>
     </div>
+  )}
+</div>
+
   );
 };
 
