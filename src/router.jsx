@@ -10,6 +10,7 @@ import Projects from '../src/pages/Projects';
 import Events from '../src/pages/Events';
 import Store from '../src/pages/Store';
 import Blog from '../src/pages/Blog';
+import PrivacyPolicy from '../src/utils/privacypolicy';
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
         <Route path="/events" element={<Events />} />
         <Route path="/store" element={<Store />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );

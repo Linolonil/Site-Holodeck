@@ -11,15 +11,15 @@ const Home = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-5xl font-extrabold mb-4 text-black mt-8" // Adicionando margem superior
+          className="text-3xl sm:text-5xl font-extrabold mb-4 text-black mt-8"
         >
-          Seja bem-vindo à <br></br> <span className="text-[#a9e916] text-6xl ">Holodeck Technologies</span>
+          Seja bem-vindo à <span className="text-[#a9e916] text-5xl ">Holodeck Technologies</span>
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-2xl sm:text-xl font-normal text-gray-700"
+          className="text-base sm:text-xl font-normal text-gray-700"
         >
         Encontre o melhor lugar para se desenvolver e se conectar com grandes oportunidades
         </motion.h2>
