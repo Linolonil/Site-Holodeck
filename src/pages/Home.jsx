@@ -13,13 +13,6 @@ const Home = () => {
 
       {/* Hero Section - Imagem e Título Principal */}
       <section className="relative flex flex-col items-center justify-center text-center mb-16">
-        {/* <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
-          <img
-            src="src/assets/homebg.mp4"
-            alt="Holodeck Background"
-            className="w-full h-full object-cover"
-          />
-        </div> */}
         <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
           <video
             src="src/assets/homebg.mp4"

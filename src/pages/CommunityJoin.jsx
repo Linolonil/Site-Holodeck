@@ -39,13 +39,11 @@ const Community = () => {
             </a>
           </div>
           <div className="w-full md:w-1/2 border-spacing-1 flex justify-center items-center mt-8 md:mt-0">
-            <video
-              controls
-              src="src/assets/Gravação de Tela 2024-08-13 às 16.12.25.mov" // adicionei o video
-              className="w-74 h-74 md:w-90 md:h-90 object-cover"
-            >
-              Seu navegador não suporta o elemento de vídeo.
-            </video>
+          <img
+              src="src/assets/info-tech.png"
+              alt="Profile Creation"
+              className="w-full rounded-lg shadow-xl"
+            />
           </div>
         </div>
 
