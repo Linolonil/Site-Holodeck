@@ -2,19 +2,19 @@
   import ArticleMain from "../components/Layout/Blog/ArticleMain.jsx";
   import ArticlesSection from "../components/Layout/Blog/ArticlesSection.jsx";
   import FilterSection from "../components/Layout/Blog/FilterSection.jsx";
-  import axios from "axios";
+  // import axios from "axios";
+import { newsArticles } from './../components/Layout/Blog/mockArticles';
 
 
   // esse cache salva muito, pois reduz o numero de req do backend (temporario)
-  const cache = {}; 
-
+  const cache = {news: newsArticles};
 
   const Blog = () => {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [category, setCategory] = useState("news");
-
+    
 
     useEffect(() => {
       if (category) {
@@ -23,24 +23,30 @@
           setLoading(false);
         } else {
           setLoading(true);
-          axios
-            .get(`https://nlx703rc-1861.brs.devtunnels.ms/api/articles/category/${category}`)
-            .then((response) => {
-              setArticles(response.data);
-              cache[category] = response.data; // Armazena a resposta no cache
-              setLoading(false);
-            })
-            .catch((error) => {
-              setError("Erro ao carregar artigos!");
-              console.log(error);
-              setLoading(false);
-            });
+          newsArticles.map((article) => {
+            if (article.category === category) {
+              setArticles([...articles, article]);
+            }
+          });
+          
+          // axios
+          //   .get(`http://localhost:5002/api/articles/category/${category}`)
+          //   .then((response) => {
+          //     setArticles(response.data);
+          //     cache[category] = response.data; // Armazena a resposta no cache
+          //     setLoading(false);
+          //   })
+          //   .catch((error) => {
+          //     setError("Erro ao carregar artigos!");
+          //     console.log(error);
+          //     setLoading(false);
+          //   });
         }
       }
     }, [category]);
 
     return (
-      <div className="min-h-screen bg-transparent">
+      <div className="min-h-screen bg-gray-100">
         {/* Seção de Destaque */}
         <ArticleMain />
 
