@@ -232,10 +232,6 @@ const PrivacyPolicy = () => {
           </table>
         </div>
       </div>
-
-      <p className="text-sm mt-8 text-gray-600 text-center">
-        © 2024 Holodeck. Todos os direitos reservados.
-      </p>
     </div>
   );
 };
