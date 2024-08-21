@@ -13,10 +13,19 @@ const Home = () => {
 
       {/* Hero Section - Imagem e Título Principal */}
       <section className="relative flex flex-col items-center justify-center text-center mb-16">
-        <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
+        {/* <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
           <img
-            src="src/assets/Motion inspiration - Keyboard.html"
+            src="src/assets/homebg.mp4"
             alt="Holodeck Background"
+            className="w-full h-full object-cover"
+          />
+        </div> */}
+        <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
+          <video
+            src="src/assets/homebg.mp4"
+            autoPlay
+            loop
+            muted
             className="w-full h-full object-cover"
           />
         </div>
@@ -25,9 +34,9 @@ const Home = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl sm:text-5xl font-bold text-white mb-4"
+            className="text-4xl sm:text-4xl font-bold text-white mb-4"
           >
-            BEM VINDO AO MUNDO TECNOLOGICO COM {" "}
+            BEM VINDO AO MUNDO{" "}
             <span className="text-[#a9e916]">HOLODECK TECHNOLOGIES</span>
           </motion.h1>
           <motion.p
@@ -38,20 +47,17 @@ const Home = () => {
           >
             Explore o futuro e se conecte com oportunidades tecnológicas.
           </motion.p>
-          <button className="bg-[#a9e916] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#8dcf12] transition duration-300">
-            Comece Agora
-          </button>
-        </div>
-        <div className="absolute top-4 right-4 flex gap-2">
-          {[...Array(2)].map((_, index) => (
-            <div key={index} className="bg-white p-2 rounded-full shadow-lg hover:shadow-xl transition duration-300">
-              <img
-                src="src/assets/natan.JPG"
-                alt={`Icon ${index + 1}`}
-                className="w-6 h-6 rounded-full"
-              />
-            </div>
-          ))}
+          <motion.a
+            href="/communityjoin"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            whileHover={{ scale: 1.1 }}
+          >
+            <button className="bg-[#a9e916] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#8dcf12] transition duration-300">
+              Comece Agora
+            </button>
+          </motion.a>
         </div>
       </section>
 
@@ -63,7 +69,10 @@ const Home = () => {
           </div>
           <div className="flex items-center gap-3">
             {[...Array(4)].map((_, index) => (
-              <div key={index} className="bg-gray-300 p-2 rounded-full hover:bg-gray-400 transition duration-300">
+              <div
+                key={index}
+                className="bg-gray-300 p-2 rounded-full hover:bg-gray-400 transition duration-300"
+              >
                 <img
                   src="src/assets/natan.JPG"
                   alt={`User ${index + 1}`}
@@ -76,11 +85,11 @@ const Home = () => {
       </section>
 
       {/* Seção de Features */}
-      <section className="mb-16">
+      <section className="mb-16 lg:p-9">
         <div className="flex flex-col md:flex-row items-center">
           <div className="flex-1 mb-8 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">CRIE SUA CONTA</h2>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg lg:w-3/5 leading-relaxed">
               Navegue por nossos projetos e veja como estamos mudando o cenário
               tecnológico. Participe de eventos inspiradores, onde você poderá
               aprender, compartilhar e crescer ao lado de outros entusiastas de
@@ -91,7 +100,7 @@ const Home = () => {
           </div>
           <div className="w-full md:w-1/3">
             <img
-              src="src/assets/image-comunidade-2.jpg"
+              src="src/assets/technot.png"
               alt="Profile Creation"
               className="w-full rounded-lg shadow-xl"
             />
@@ -100,7 +109,7 @@ const Home = () => {
       </section>
 
       {/* Seção de Projetos e Eventos */}
-      <section className="mb-16">
+      <section className="mb-16 lg:p-9">
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/3 mb-8 md:mb-0">
             <img
@@ -109,9 +118,9 @@ const Home = () => {
               className="w-full rounded-lg shadow-xl"
             />
           </div>
-          <div className="flex-1">
+          <div className="flex-1 lg:pl-20">
             <h2 className="text-3xl font-bold mb-4">EVENTS AND MEETINGS</h2>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg lg:w-3/5 leading-relaxed">
               Descubra os projetos mais recentes da nossa comunidade e veja como
               estamos transformando o futuro da tecnologia. Participe de eventos
               onde você pode aprender, compartilhar e crescer com outros
@@ -122,7 +131,7 @@ const Home = () => {
       </section>
 
       {/* Seção de Valores e Princípios */}
-      <section className="mb-16">
+      <section className="mb-16 lg:p-9">
         <div className="flex flex-col md:flex-row items-center">
           <div className="flex-1 mb-8 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">NOSSOS VALORES</h2>
@@ -162,21 +171,21 @@ const Home = () => {
           <motion.img
             src="src/assets/PARCEIROS/logoSebrae.png"
             alt="Parceiro Sebrae"
-            className="h-12 transition-transform transform hover:scale-110"
+            className="h-12 transition-transform bg-black rounded-lg lg:pl-4 lg:pr-4 shadow-xl transform hover:scale-110"
             whileHover={{ rotate: [0, 5, -5, 0] }}
             transition={{ duration: 0.5 }}
           />
           <motion.img
             src="src/assets/PARCEIROS/logowhite.png"
             alt="Parceiro White"
-            className="h-12 transition-transform transform hover:scale-110"
+            className="h-12 transition-transform bg-black rounded-lg lg:pl-2 shadow-xl transform hover:scale-110"
             whileHover={{ rotate: [0, 5, -5, 0] }}
             transition={{ duration: 0.5 }}
           />
           <motion.img
             src="src/assets/PARCEIROS/logo-parceiro.png"
             alt="Parceiro Parceiro"
-            className="h-12 transition-transform transform hover:scale-110"
+            className="h-12 transition-transform bg-black rounded-lg lg:pl-4 lg:pr-4 shadow-xl transform hover:scale-110"
             whileHover={{ rotate: [0, 5, -5, 0] }}
             transition={{ duration: 0.5 }}
           />
