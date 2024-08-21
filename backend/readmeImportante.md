@@ -57,3 +57,14 @@
 ├── app.js               # Arquivo principal do servidor
 ├── package.json         # Dependências e scripts do projeto
 └── README.md            # Documentação do projeto
+
+
+Descrição das Pastas
+config/: Arquivos de configuração, como banco de dados, servidor e variáveis de ambiente.
+controllers/: Controladores que lidam com as operações de cada rota.
+models/: Modelos do banco de dados que representam as entidades principais (usuários, projetos, produtos, etc.).
+routes/: Arquivos de rotas que mapeiam URLs para controladores específicos.
+middlewares/: Middlewares para manipulação de autenticação, erros, validação, e logging.
+services/: Serviços que contêm a lógica de negócio principal, separada dos controladores.
+utils/: Funções utilitárias e constantes globais.
+views/: Templates de visualização para renderizar as páginas da aplicação.
