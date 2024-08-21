@@ -1,96 +1,92 @@
-import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import { useRef } from "react";
-import { articlesMain } from "../../Layout/Blog/CategoriesAndArticles.jsx"
-import "./styles.css"
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
+import { articlesMainList } from "./CategoriesAndArticles.jsx";
+import PropTypes from 'prop-types';
+
+
+const ArticleCard = ({ article, className }) => {
+  return (
+    <div className={`relative w-full h-64 overflow-hidden group ${className}`}>
+      <a href={article.link} target="_blank" rel="noreferrer">
+        {/* Imagem de Fundo */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={article.imgSrc}
+            alt={article.title}
+            className="h-full w-full object-cover transition-transform duration-300 ease-linear group-hover:scale-105"
+          />
+        </div>
+
+        {/* Sobreposição de Gradiente e Conteúdo */}
+        <div className="absolute bottom-0 inset-x-0 z-10 p-4 text-white px-4 py-5">
+          <div className="relative z-10 w-full flex flex-col justify-start">
+            <div className="inline-block w-max border bg-[rgb(60_41_122)] px-2 py-1 border-[rgb(60_41_122)] rounded-sm">
+              <p className="text-sm rounded-sm capitalize font-bold text-gray-200">
+                {article.theme}
+              </p>
+            </div>
+            <div className="w-full h-full flex justify-start items-start">
+              <h1 className="text-xl sm:text-xl md:text-2xl font-bold mt-2 font-mono text-start">
+                {article.title}
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        {/* Gradiente */}
+        <div
+          className="absolute inset-0 w-full h-full pointer-events-none bg-gradient-to-b"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.35) 58%, rgba(0, 0, 0, 0.7) 82%)",
+          }}
+        ></div>
+      </a>
+    </div>
+  );
+};
 
 function ArticleMain() {
-  const swiperRef = useRef(null);
-
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty('--progress', 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  };
-  const handleMouseEnter = () => {
-    if (swiperRef.current) swiperRef.current.swiper.autoplay.stop();
-  };
-
-  const handleMouseLeave = () => {
-    if (swiperRef.current) swiperRef.current.swiper.autoplay.start();
-  };
-
   return (
-    <motion.section
-      id="blog"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      scrollbar={{ draggable: true }}
-      transition={{ duration: 0.7 }}
-      className="container w-screen  mx-auto mt-4  pt-4  px-6 min-h-fit "
-    >
-      <Swiper
-        ref={swiperRef}
-        pagination={{
-          dynamicBullets: true,
-        }}
-        modules={[Autoplay, Pagination]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
-        spaceBetween={30}
-        slidesPerView={1}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        speed={2000} // Ajuste a duração da transição
-        className=" py-6"
-      >
-        {articlesMain.map((article, index) => (
-          <SwiperSlide key={index}>
-            <div
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="flex flex-col lg:flex-row bg-white rounded-lg shadow-md overflow-hidden "
-            >
-              <img
-                src={article.imgSrc}
-                alt="Artigo Destaque"
-                className="h-96  lg:h-80 w-full lg:w-1/2  object-cover"
-              />
-              <div className="h-96 lg:h-80  p-8 lg:w-1/2 flex flex-col justify-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                  {article.title}
-                </h2>
-                <p className="text-gray-700 mb-6">{article.content}</p>
-                <a
-                  href={article.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#8419c5] hover:underline inline-block  p-2 w-24"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
-      </Swiper>
-    </motion.section>
+    <section className="w-full h-auto md:h-96 flex flex-wrap  md:flex-nowrap justify-center items-center bg-gray-700 dark:bg-dark-bg text-center overflow-hidden">
+      {/* Artigo Principal */}
+      <ArticleCard 
+        article={articlesMainList[0]} 
+        className="w-1/2  sm:w-[40%] md:w-1/3  md:h-full"
+      />
+
+      {/* Artigo Secundário */}
+      <ArticleCard 
+        article={articlesMainList[1]} 
+        className="w-1/2  sm:w-[35%] md:w-1/3  md:h-full"
+      />
+
+      {/* Artigos Terciários */}
+      {/* <ArticleCard 
+        article={articlesMainList[1]} 
+        className="hidden  sm:block sm:w-1/3 md:w-1/3  md:h-full"
+      /> */}
+      <div className="hidden  sm:block sm:w-[25%] md:w-1/3  md:h-full">
+        <ArticleCard 
+          article={articlesMainList[2]} 
+          className="hidden sm:block  md:block lg:block xl:block h-64 md:h-1/2"
+        />
+        <ArticleCard 
+          article={articlesMainList[3]} 
+          className="h-64 lg:block xl:block md:block sm hidden md:h-1/2"
+        />
+      </div>
+    </section>
   );
 }
+
+
+ArticleCard.propTypes = {
+  article: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+    theme: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  className: PropTypes.string,
+};
 
 export default ArticleMain;
