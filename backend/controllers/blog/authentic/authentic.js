@@ -62,6 +62,6 @@ app.get('/profile', async (req, res) => {
 });
 
 // Iniciar o Servidor
-app.listen(3000, () => {
+app.listen(1862, () => {
     console.log('Servidor rodando na porta 3000');
 });

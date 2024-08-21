@@ -1,37 +1,59 @@
-backend/
+/
+├── config/
+│   ├── db.js            # Configuração do banco de dados
+│   ├── server.js        # Configuração do servidor
+│   └── environment.js   # Variáveis de ambiente e configurações globais
 │
 ├── controllers/
-│   ├── authController.js        # Lógica para autenticação de usuários
-│   ├── articleController.js     # Lógica para manipulação de artigos
-│   └── profileController.js     # Lógica para manipulação de perfis (opcional)
-│
-├── routes/
-│   ├── authRoutes.js            # Rotas relacionadas à autenticação
-│   ├── articleRoutes.js         # Rotas relacionadas aos artigos
-│   └── profileRoutes.js         # Rotas relacionadas aos perfis (opcional)
-│
-├── middleware/
-│   ├── authMiddleware.js        # Middleware para autenticação de usuários
-│   └── errorMiddleware.js       # Middleware para tratamento de erros
+│   ├── authController.js   # Lógica de autenticação (login, register)
+│   ├── projectController.js # Lógica para feed de projetos
+│   ├── shopController.js    # Lógica para loja (shop-store)
+│   ├── contactController.js # Lógica para página de contato
+│   ├── blogController.js    # Lógica para blog
+│   └── baseController.js    # Controlador base (comuns a todas as páginas)
 │
 ├── models/
-│   ├── userModel.js             # Modelo de dados para usuários
-│   ├── articleModel.js          # Modelo de dados para artigos
-│   └── profileModel.js          # Modelo de dados para perfis (opcional)
+│   ├── User.js           # Modelo de usuário
+│   ├── Project.js        # Modelo de projeto
+│   ├── Product.js        # Modelo de produto (loja)
+│   ├── ContactMessage.js # Modelo para mensagens de contato
+│   └── BlogPost.js       # Modelo para postagens de blog
 │
-├── config/
-│   ├── dbConfig.js              # Configuração do banco de dados
-│   ├── swaggerConfig.js         # Configuração do Swagger
-│   └── envConfig.js             # Configuração das variáveis de ambiente
+├── routes/
+│   ├── authRoutes.js     # Rotas de autenticação
+│   ├── projectRoutes.js  # Rotas para feed de projetos
+│   ├── shopRoutes.js     # Rotas para loja
+│   ├── contactRoutes.js  # Rotas para página de contato
+│   ├── blogRoutes.js     # Rotas para blog
+│   └── index.js          # Arquivo que combina todas as rotas
+│
+├── middlewares/
+│   ├── authMiddleware.js  # Middleware de autenticação
+│   ├── errorHandler.js    # Middleware de tratamento de erros
+│   ├── validation.js      # Middleware para validação de dados
+│   └── logger.js          # Middleware de logging
+│
+├── services/
+│   ├── authService.js     # Serviço de autenticação
+│   ├── projectService.js  # Serviço para feed de projetos
+│   ├── shopService.js     # Serviço para loja
+│   ├── contactService.js  # Serviço para mensagens de contato
+│   └── blogService.js     # Serviço para blog
 │
 ├── utils/
-│   ├── authUtils.js             # Funções utilitárias para autenticação
-│   └── logger.js                # Configuração e funções de logging
+│   ├── helpers.js        # Funções auxiliares
+│   └── constants.js      # Constantes do projeto
 │
-├── .env                         # Variáveis de ambiente do projeto
-├── .gitignore                    # Arquivos e diretórios a serem ignorados pelo Git
-├── nodemon.json                 # Configuração do Nodemon
-├── package.json                 # Metadados do projeto e dependências
-├── package-lock.json            # Snapshot das dependências do projeto
-├── README.md                    # Descrição do projeto
-└── server.js                    # Ponto de entrada da aplicação
+├── views/
+│   ├── layouts/          # Layouts gerais (e.g., header, footer)
+│   ├── login.ejs         # Página de login
+│   ├── register.ejs      # Página de registro
+│   ├── projects-feed.ejs # Página de feed de projetos
+│   ├── shop-store.ejs    # Página da loja
+│   ├── contact.ejs       # Página de contato
+│   └── blog.ejs          # Página de blog
+│
+├── .env                 # Variáveis de ambiente
+├── app.js               # Arquivo principal do servidor
+├── package.json         # Dependências e scripts do projeto
+└── README.md            # Documentação do projeto
