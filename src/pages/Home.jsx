@@ -87,7 +87,7 @@ const Home = () => {
 
       <section className="flex justify-around p-8 bg-white">
         <div className="text-center">
-          <h2 className="text-2xl font-bold">+100</h2>
+          <h2 className="text-2xl font-bold">+150</h2>
           <p className="text-gray-600">Estudantes Ativos</p>
         </div>
         <div className="text-center">
