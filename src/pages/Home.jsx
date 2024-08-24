@@ -3,58 +3,104 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Navbar - Menu e Botão de Ação */}
-      <header className="flex justify-end items-center mb-8 p-8">
-        <button className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-800 transition duration-300">
-          Login
-        </button>
-      </header>
-
       {/* Hero Section - Imagem e Título Principal */}
-      <section className="relative flex flex-col items-center justify-center text-center mb-16 p-8">
-        <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
-          <video
-            src="src/assets/homebg.mp4"
-            autoPlay
-            loop
-            muted
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-lg" />
-        </div>
-        <div className="absolute inset-0 flex flex-col justify-center items-center p-6">
+      <section className="flex flex-col md:flex-row items-center justify-between p-8 bg-black">
+        <div className="flex flex-col items-start justify-center md:w-1/2 text-left mb-8 md:mb-0">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl sm:text-4xl font-bold text-white mb-4"
+            className="text-4xl sm:text-5xl ml-4 md:text-6xl font-bold text-white mb-4 text-center md:text-left"
           >
-            BEM VINDO AO MUNDO{" "}
-            <span className="text-[#a9e916]">HOLODECK TECHNOLOGIES</span>
+            BEM VINDO AO MUNDO
+            <br className="hidden md:block" />
+            <span className="text-[#a9e916]"> HOLODECK TECHNOLOGIES</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-lg sm:text-xl font-normal text-gray-200 mb-6"
+            className="text-lg sm:text-xl ml-4 font-normal text-gray-200 mb-6 text-center md:text-left"
           >
             Explore o futuro e se conecte com oportunidades tecnológicas.
           </motion.p>
-          <motion.a
-            href="/communityjoin"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            whileHover={{ scale: 1.1 }}
-          >
-            <button className="bg-[#a9e916] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#8dcf12] transition duration-300">
-              Comece Agora
-            </button>
-          </motion.a>
+
+          <div className="flex flex-wrap ml-4 space-x-4 justify-center">
+            <motion.a
+              href="#join"
+              className="bg-purple-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-600 transition duration-300 text-center w-40 sm:w-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              Faça seu Login
+            </motion.a>
+            <motion.a
+              href="#learn-more"
+              className="bg-gray-200 border-2 border-purple-800 px-6 py-3 rounded-full font-semibold hover:bg-lime-300 transition duration-300 text-center w-40 sm:w-auto ml-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Contate-nos
+            </motion.a>
+          </div>
+        </div>
+        <div className="md:w-1/2 flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="relative w-full mt-16 h-auto rounded-lg">
+              <motion.img
+                src="src/assets/communithome.jpg"
+                alt="Student 1"
+                className="w-full h-auto rounded-lg object-cover"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-lg"></div>
+            </div>
+            <div className="relative w-full h-auto">
+              <motion.img
+                src="src/assets/imghome.png"
+                alt="Student 2"
+                className="w-full h-auto mb-2 mt-2 rounded-lg object-cover"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-lg"></div>
+            </div>
+            <div className="relative w-full lg:w-2/3 h-auto rounded-lg col-span-1 sm:col-span-2">
+              <motion.img
+                src="src/assets/comunidadehome.jpg"
+                alt="Student 3"
+                className="w-full lg:ml-14 h-auto rounded-lg object-cover"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-lg"></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Seção de Informações Rápidas */}
+      <section className="flex justify-around p-8 bg-white">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold">+100</h2>
+          <p className="text-gray-600">Estudantes Ativos</p>
+        </div>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold">+10</h2>
+          <p className="text-gray-600">Mentores</p>
+        </div>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold">Diversos</h2>
+          <p className="text-gray-600">Recursos</p>
+        </div>
+      </section>
+
+      {/* Seção de Informações Rápidas
       <section className="mb-16 p-8">
         <div className="flex flex-col md:flex-row items-center md:justify-between">
           <div className="text-sm font-semibold mb-4 md:mb-0">
@@ -75,10 +121,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Seção Principal que engloba todas as seções */}
-      <section className="w-full p-8 bg-gray-950 text-white">
+      <section className="w-full p-8 bg-black text-white">
         <div className="w-full max-w-screen-xl mx-auto">
           <h1 className="text-4xl mt-7 font-bold text-center mb-12">
             Explore Nossa Comunidade
@@ -127,7 +173,7 @@ const Home = () => {
               </div>
               {/* Card 3 */}
               <div className="bg-gray-800 p-6 rounded-2xl shadow-md flex flex-col">
-                <h2 className="text-2xl font-bold mb-4 text-center">
+                <h2 className="text-2xl font-bold  mb-4 text-center">
                   Inovação e Tecnologia
                 </h2>
                 <div className="w-full h-40 bg-gray-700 rounded-lg flex items-center justify-center mb-4">
@@ -181,6 +227,77 @@ const Home = () => {
                   facilitar o aprendizado e a inovação. Explore nossos materiais
                   e aproveite ao máximo as oportunidades oferecidas.
                 </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section className="w-full p-8 bg-white text-black">
+        <div className="w-full max-w-screen-xl mx-auto">
+          <h1 className="text-4xl mt-7 font-bold text-center mb-12">
+          O primeiro CMS headless desenvolvido <br /> especificamente para blogs
+          </h1>
+
+          {/* Seção de Cards */}
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-3 mb-16 lg:p-16">
+            {/* Card 1 */}
+            <div className="bg-gray-100 p-6 rounded-2xl shadow-md flex flex-col">
+              <h2 className="text-2xl font-bold mb-4">
+                Desenvolvimento de Projetos com API
+              </h2>
+              <p className="text-gray-600 text-base leading-relaxed mb-4">
+                Utilize nossas APIs para o desenvolvimento de projetos
+                inovadores e eficientes. Com uma documentação completa e suporte
+                integrado, você pode facilmente integrar nossas APIs em seus
+                projetos, garantindo uma experiência de desenvolvimento ágil e
+                sem complicações.
+              </p>
+              <div className="flex justify-between items-center mt-auto">
+                <a href="#" className="text-blue-500 underline">
+                  Playground da API
+                </a>
+                <a href="#" className="text-blue-500 underline">
+                  Fork no GitHub
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-gray-100 p-6 rounded-2xl shadow-md flex flex-col">
+              <h2 className="text-2xl font-bold mb-4">
+                Apoio com Recursos e Materiais de Estudo
+              </h2>
+              <p className="text-gray-600 text-base leading-relaxed mb-4">
+                Explore nossa página de blog para acessar uma vasta gama de
+                materiais de estudo e recursos úteis. Oferecemos apoio contínuo
+                para o aprendizado e desenvolvimento, garantindo que você tenha
+                acesso às melhores ferramentas e informações disponíveis para
+                impulsionar seus projetos e aprimorar suas habilidades.
+              </p>
+              <div className="flex justify-center mt-auto">
+                <a href="#" className="text-blue-500 underline">
+                  Playground da Biblioteca
+                </a>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-gray-100 p-6 rounded-2xl shadow-md flex flex-col">
+              <h2 className="text-2xl font-bold mb-4">
+                Contribuição Livre de Conteúdos
+              </h2>
+              <p className="text-gray-600 text-base leading-relaxed mb-4">
+                Contribua com conteúdos valiosos na nossa página de blog,
+                incluindo artigos, livros e outros recursos. Compartilhe seu
+                conhecimento para enriquecer os recursos disponíveis e ajudar
+                outros usuários em seu processo de aprendizado. Sua contribuição
+                ajuda a criar uma comunidade mais rica e informada.
+              </p>
+              <div className="flex justify-center mt-auto">
+                <a href="#" className="text-blue-500 underline">
+                  Contribuir
+                </a>
               </div>
             </div>
           </section>
