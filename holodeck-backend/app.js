@@ -1,15 +1,26 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
-const blogRoutes = require('./routes/blogRoutes');
+const userRoutes = require('./routes/userRoutes');
+const articleRoutes = require('./routes/articleRoutes');
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+
 require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
-app.use(bodyParser.json());
+// Carregar o arquivo de documentação Swagger
+const swaggerDocument = YAML.load('./swagger/swagger.yaml');
 
-app.use('/api', blogRoutes);
+// Configurar o Swagger UI
+app.use('/api-docs/users', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+app.use(cors());
+app.use(express.json());
+
+app.use('/users', userRoutes);
+app.use('/articles', articleRoutes);
+app.use('/images', express.static('uploads'));
 
 const port = process.env.PORT || 5000;
 

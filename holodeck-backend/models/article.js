@@ -1,29 +1,24 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Article extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  Article.init({
-    title: DataTypes.STRING,
-    url: DataTypes.STRING,
-    image: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    author: DataTypes.STRING,
-    date: DataTypes.DATE,
-    theme: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Article',
-  });
-  return Article;
-};
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+const User = require('./User'); // Importa o modelo User
+
+const Article = sequelize.define('Article', {
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  content: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  theme: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+
+// Relacionamento: Um artigo pertence a um usuário
+Article.belongsTo(User, { foreignKey: 'userId' });
+User.hasMany(Article, { foreignKey: 'userId' });
+
+module.exports = Article;

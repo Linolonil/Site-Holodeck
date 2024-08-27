@@ -1,11 +1,11 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import { btnClose, btnMore, listCategory } from "../../Layout/Blog/CategoriesAndArticles.jsx";
+import {btnClose, btnMore, listCategory } from "../../Layout/Blog/CategoriesAndArticles.jsx";
 
 function FilterSection({ setCategory }) {
   const [showAllCategories, setShowAllCategories] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("News");
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleCategoryChange = (category) => {
@@ -37,10 +37,10 @@ function FilterSection({ setCategory }) {
 
   return (
     <>
-      <div className="py-2 lg:flex lg:items-center lg:justify-between bg-transparent mb-5">
-        <h3 className="text-4xl font-bold text-gray-700 border-b-4 border-[#a9e916] pb-2">
-          Latest Articles
-        </h3>
+      <div className="p-2 lg:flex lg:items-center lg:justify-between bg-transparent mb-5">
+        <h3 className="text-4xl font-bold text-gray-700 border-b-4 border-[#a9e916] pb-2 first-letter:uppercase">
+                  {selectedCategory.replace("-", " ")}
+                     </h3>
 
         <div className="flex gap-2 pt-5 lg:pt-0 justify-end">
           <input
