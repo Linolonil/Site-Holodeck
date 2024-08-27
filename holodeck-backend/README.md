@@ -50,10 +50,12 @@ Este é um projeto para gerenciamento de usuários com uma API RESTful. A API pe
 ```
 3. **Inicie o Banco de Dados**
 
-   inicie as migrations
-
 ```bash
-   npm run migrate
+#Para garantir que o banco de dados esteja atualizado com as últimas alterações no esquema, aplique as migrações com o seguinte comando:
+npx prisma migrate deploy
+
+#Caso o Prisma Client não tenha sido gerado automaticamente, execute o seguinte comando para gerá-lo:
+npx prisma generate
 ```
 
 4. **Inicie o Servidor**
