@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
+const profileImageRoutes = require('./routes/profileImageRoutes');
 const articleRoutes = require('./routes/articleRoutes');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
@@ -19,6 +20,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/users', userRoutes);
+app.use('/profile-images', profileImageRoutes);
 app.use('/articles', articleRoutes);
 app.use('/images', express.static('uploads'));
 
