@@ -54,7 +54,6 @@ import { newsArticles } from './../components/Layout/Blog/mockArticles';
         <section className="container mx-auto px-3 lg:px-6  my-12">
           {/* Filtro dos Artigos */}
           <FilterSection setCategory={setCategory}  setError={setError}/>
-
           {/* Lista de Artigos */}
           <ArticlesSection articles={articles} loading={loading} error={error} />
         </section>
