@@ -1,9 +1,9 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
-import jwt from 'jsonwebtoken';
-import path from 'path';
-const bcrypt = require('bcrypt'); 
+const jwt = require('jsonwebtoken');
+const path = require('path');
 const fs = require('fs');
+const bcrypt = require('bcrypt'); 
 
 // Lista todos os usuários
 const listUsers = async (req, res) => {
@@ -87,23 +87,11 @@ const deleteUser = async (req, res) => {
 // Cria um novo usuário
 const createUser = async (req, res) => {
   const { name, email, password, cpf, username } = req.body;
-  const image_filename = req.file ? req.file.filename : null; // Verifica se o arquivo é recebido
 
-  const deleteImage = () => {
-    if (req.file) {
-      const path = `uploads/${req.file.filename}`;
-      fs.unlink(path, (err) => {
-        if (err) {
-          console.error('Erro ao deletar a imagem:', err);
-        }
-      });
-    }
-  };
   try {
     const existingUser = await prisma.user.findUnique({ where: { cpf } });
 
     if (existingUser) {
-      deleteImage();
       return res.status(409).json({ success: false, message: "Usuário com esse CPF já existe!" });
     }
 
@@ -117,7 +105,7 @@ const createUser = async (req, res) => {
         password: hashedPassword, 
         cpf, 
         username, 
-        profilePicture: image_filename 
+        profilePicture: null 
       },
     });
 
@@ -125,7 +113,6 @@ const createUser = async (req, res) => {
 
     res.status(201).json({ success: true, user, token });
   } catch (error) {
-    deleteImage();
     res.status(500).json({ success: false, message: "Erro interno do servidor" });
     console.error(error.message);
   }
