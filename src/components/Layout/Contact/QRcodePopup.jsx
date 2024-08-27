@@ -32,7 +32,7 @@ const QRCodePopup = () => {
     </button>
     <button
       onClick={(event) =>
-        handleQRCodeClick(event, "https://discord.com/channels/1217480586273488928/1217480586785198111")
+        handleQRCodeClick(event, "https://discord.gg/YTbTfmfs")
       }
       className="relative overflow-hidden flex items-center space-2 px-4 py-2 bg-[#221655] text-white font-bold rounded group"
       aria-label="Discord"
