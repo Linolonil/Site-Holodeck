@@ -12,8 +12,8 @@ datasource db {
 model User {
   id             Int      @id @default(autoincrement())
   name           String
-  username       String   
-  email          String   
+  username       String   @unique
+  email          String   @unique
   cpf            String   @unique  // CPF único (para sistemas brasileiros)
   password       String
   bio            String?  // Biografia do usuário, opcional
