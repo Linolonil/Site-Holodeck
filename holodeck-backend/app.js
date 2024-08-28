@@ -3,6 +3,8 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const profileImageRoutes = require('./routes/profileImageRoutes');
 const articleRoutes = require('./routes/articleRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const collaboratorRoutes = require('./routes/collaboratorRoutes');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 
@@ -18,6 +20,9 @@ app.use('/api-docs/users', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(cors());
 app.use(express.json());
+
+app.use('/collaborators', collaboratorRoutes);
+app.use('/login', loginRoutes);
 
 app.use('/users', userRoutes);
 app.use('/profile-images', profileImageRoutes);
