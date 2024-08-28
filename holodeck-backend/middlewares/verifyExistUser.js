@@ -6,19 +6,30 @@ const verifyExistUser = async (req, res, next) => {
   const { username, email, cpf } = req.body;
 
   try {
-    // Inicia uma transação
+    // Inicia uma transação para buscar os usuários
     const [userByUsername, userByEmail, userByCpf] = await prisma.$transaction([
       prisma.user.findUnique({ where: { username } }),
       prisma.user.findUnique({ where: { email } }),
       prisma.user.findUnique({ where: { cpf } }),
     ]);
 
+    // Cria um objeto para armazenar erros com mensagens padronizadas
+    const errors = {};
+
     // Verifica se já existe um usuário com o mesmo username, email ou cpf
-    if (userByEmail && userByCpf ) {
-      return res.status(400).json({ success: false, message: "Usuário já cadastrado" });
-    }
     if (userByUsername) {
-      return res.status(400).json({ success: false, message: "Nome de usuário indisponível" });
+      errors.username = "Nome de usuário indisponível.";
+    }
+    if (userByEmail) {
+      errors.email = "Email já cadastrado.";
+    }
+    if (userByCpf) {
+      errors.cpf = "CPF já cadastrado.";
+    }
+
+    // Se houver erros, retorna uma resposta com status 400 e o objeto de erros
+    if (Object.keys(errors).length > 0) {
+      return res.status(400).json({ success: false, errors });
     }
 
     // Se não houver conflitos, continua com a requisição
@@ -40,7 +51,12 @@ const verifyConflictOnUpdate = async (req, res, next) => {
     });
 
     if (!currentUser) {
-      return res.status(404).json({ success: false, message: "Usuário não encontrado" });
+      return res.status(404).json({
+        success: false,
+        errors: {
+          general: "Usuário não encontrado."
+        }
+      });
     }
 
     // Verifica se outro usuário já possui os mesmos dados
@@ -50,43 +66,39 @@ const verifyConflictOnUpdate = async (req, res, next) => {
           { id: { not: parseInt(id) } }, // Ignora o usuário atual
           {
             OR: [
-              { username: username || null },
-              { email: email || null },
-              { cpf: cpf || null },
+              { username },
+              { email },
+              { cpf },
             ],
           },
         ],
       },
     });
 
-    if (conflicts.length > 0) {
-      // Identifica qual campo causou o conflito
-      let conflictMessage = [].filter(conflict => conflict);
+    const errors = {};
 
-      conflicts.forEach(conflict => {
-        if (conflict.username === username) {
-          conflictMessage.push("Nome de usuário já existe.");
-        }
-        if (conflict.email === email) {
-          conflictMessage.push("Email já cadastrado.");
-        }
-        if (conflict.cpf === cpf) {
-          conflictMessage.push("CPF já cadastrado.");
-        }
+    if (conflicts.some(conflict => conflict.username === username)) {
+      errors.username = "Nome de usuário já existe.";
+    }
+    if (conflicts.some(conflict => conflict.email === email)) {
+      errors.email = "Email já cadastrado.";
+    }
+    if (conflicts.some(conflict => conflict.cpf === cpf)) {
+      errors.cpf = "CPF já cadastrado.";
+    }
+
+    if (Object.keys(errors).length > 0) {
+      return res.status(400).json({
+        success: false,
+        errors
       });
-
-      return res.status(400).json({ success: false, message: conflictMessage[0] });
     }
 
     next();
   } catch (error) {
-    console.error("Erro ao verificar conflitos:", error);
+    console.error("Erro ao verificar existência do usuário:", error);
     res.status(500).json({ success: false, message: "Erro interno do servidor" });
   }
 };
-
-module.exports = verifyConflictOnUpdate;
-
-
 
 module.exports = { verifyExistUser, verifyConflictOnUpdate };
