@@ -1,53 +1,74 @@
 const validator = require("validator");
 const CPFValidator = require("cpf-cnpj-validator");
-const fs = require('fs');
 
-const validations = (req, res, next) => {
-  const { name, email, password, cpf, username } = req.body;
+//validar se os campos estão vazios
+const validateEmptyFields = ({
+  name,
+  email,
+  password,
+  cpf,
+  username,
+}) => {
+  const errors = {};
 
-  // Função para deletar a imagem se houver um erro
-  const deleteImage = () => {
-    if (req.file) {
-      const path = `uploads/${req.file.filename}`;
-      fs.unlink(path, (err) => {
-        if (err) {
-          console.error('Erro ao deletar a imagem:', err);
-        }
-      });
+  const trim = (value) => (value || "").trim();
+
+  if (!trim(name)) errors.name = "Nome é obrigatório.";
+  if (!trim(email)) errors.email = "Email é obrigatório.";
+  if (!trim(password)) errors.password = "Senha é obrigatória.";
+  if (!trim(cpf)) errors.cpf = "CPF é obrigatório.";
+  if (!trim(username)) errors.username = "Nome de usuário é obrigatório.";
+
+  return Object.keys(errors).length ? errors : null;
+};
+
+// Função para validar o CPF
+const validateCpf = (cpf) => {
+  const errors = {};
+  if (!CPFValidator.cpf.isValid(cpf)) errors.cpf = "CPF inválido.";
+  return Object.keys(errors).length ? errors : null;
+};
+
+const validateEmail = (email) => {
+  const errors = {};
+  if (!validator.isEmail(email)) errors.email = "Email inválido.";
+  return Object.keys(errors).length ? errors : null;
+};
+
+// Função para validar a senha
+const validatePassword = (password) => {
+  const errors = {};
+  if (password.length < 8)
+    errors.password = "Senha deve ter pelo menos 8 caracteres.";
+  return Object.keys(errors).length ? errors : null;
+};
+
+
+// Função principal de validação
+const validations = async (req, res, next) => {
+  const { name, email, password, cpf, username } =req.body;
+
+  try {
+    // Validações básicas
+    const errors = {
+      ...(validateEmptyFields({ name, email, password, cpf, username }) || {}),
+      ...(validateCpf(cpf) || {}),
+      ...(validateEmail(email) || {}),
+      ...(validatePassword(password) || {}),
+    };
+
+    if (Object.keys(errors).length > 0) {
+      return res.status(400).json({ success: false, errors });
     }
-  };
 
-  // Validações
-  if (!name || !email || !password || !cpf || !username) {
-    deleteImage();
-    return res
-      .status(400)
-      .json({ success: false, message: "Todos os campos são obrigatórios!" });
+    // Se não houver conflitos, continua com a requisição
+    next();
+  } catch (error) {
+    console.error("Erro ao validar campos:", error);
+    res
+      .status(500)
+      .json({ success: false, message: "Erro interno do servidor" });
   }
-
-  if (!CPFValidator.cpf.isValid(cpf)) {
-    deleteImage();
-    return res.status(400).json({ success: false, message: "CPF é inválido" });
-  }
-
-  if (!validator.isEmail(email)) {
-    deleteImage();
-    return res
-      .status(400)
-      .json({ success: false, message: "Por favor, insira um email válido" });
-  }
-
-  if (password.length < 8) {
-    deleteImage();
-    return res
-      .status(400)
-      .json({
-        success: false,
-        message: "Por favor, insira uma senha com no mínimo 8 caracteres",
-      });
-  }
-
-  next();
 };
 
 module.exports = validations;
