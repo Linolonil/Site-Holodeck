@@ -2,50 +2,72 @@ const validator = require("validator");
 const CPFValidator = require("cpf-cnpj-validator");
 
 //validar se os campos estão vazios
-const validateEmptyFields = (fields) => {
-  for (const [key, value] of Object.entries(fields)) {
-    if (validator.isEmpty(value.trim())) {
-      return `O campo ${key} não pode ser vazio!`;
-    }
-  }
-  return null;
+const validateEmptyFields = ({
+  name,
+  email,
+  password,
+  cpf,
+  username,
+}) => {
+  const errors = {};
+
+  const trim = (value) => (value || "").trim();
+
+  if (!trim(name)) errors.name = "Nome é obrigatório.";
+  if (!trim(email)) errors.email = "Email é obrigatório.";
+  if (!trim(password)) errors.password = "Senha é obrigatória.";
+  if (!trim(cpf)) errors.cpf = "CPF é obrigatório.";
+  if (!trim(username)) errors.username = "Nome de usuário é obrigatório.";
+
+  return Object.keys(errors).length ? errors : null;
 };
 
 // Função para validar o CPF
 const validateCpf = (cpf) => {
-  return CPFValidator.cpf.isValid(cpf) ? null : "CPF inválido";
+  const errors = {};
+  if (!CPFValidator.cpf.isValid(cpf)) errors.cpf = "CPF inválido.";
+  return Object.keys(errors).length ? errors : null;
 };
 
-// Função para validar o email
 const validateEmail = (email) => {
-  return validator.isEmail(email) ? null : "Por favor, insira um email válido";
+  const errors = {};
+  if (!validator.isEmail(email)) errors.email = "Email inválido.";
+  return Object.keys(errors).length ? errors : null;
 };
 
 // Função para validar a senha
 const validatePassword = (password) => {
-  return password.length >= 8 ? null : "Por favor, insira uma senha com no mínimo 8 caracteres";
+  const errors = {};
+  if (password.length < 8)
+    errors.password = "Senha deve ter pelo menos 8 caracteres.";
+  return Object.keys(errors).length ? errors : null;
 };
+
 
 // Função principal de validação
 const validations = async (req, res, next) => {
-  const { name, email, password, cpf, username } = req.body;
-  try {
-  // Validações básicas
-  const errors = [
-    validateEmptyFields({ nome:name, email, senha: password, cpf, login:username }),
-    validateCpf(cpf),
-    validateEmail(email),
-    validatePassword(password),
-  ].filter(error => error);
+  const { name, email, password, cpf, username } =req.body;
 
-  if (errors.length > 0) {
-    return res.status(400).json({ success: false, message: errors[0] });
-  }
+  try {
+    // Validações básicas
+    const errors = {
+      ...(validateEmptyFields({ name, email, password, cpf, username }) || {}),
+      ...(validateCpf(cpf) || {}),
+      ...(validateEmail(email) || {}),
+      ...(validatePassword(password) || {}),
+    };
+
+    if (Object.keys(errors).length > 0) {
+      return res.status(400).json({ success: false, errors });
+    }
+
     // Se não houver conflitos, continua com a requisição
     next();
   } catch (error) {
     console.error("Erro ao validar campos:", error);
-    res.status(500).json({ success: false, message: "Erro interno do servidor" });
+    res
+      .status(500)
+      .json({ success: false, message: "Erro interno do servidor" });
   }
 };
 
