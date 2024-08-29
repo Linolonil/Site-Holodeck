@@ -28,7 +28,7 @@ const Home = () => {
           <div className="flex flex-wrap ml-4 space-x-4 justify-center mt-8">
             <motion.a
               href="#join"
-              className="bg-purple-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-600 transition duration-300 text-center w-40 sm:w-auto"
+              className="bg-purple-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-600 transition duration-300 text-center w-40 sm:w-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -37,7 +37,7 @@ const Home = () => {
             </motion.a>
             <motion.a
               href="#learn-more"
-              className="bg-gray-200 border-2 border-purple-800 px-6 py-3 rounded-full font-semibold hover:bg-lime-300 transition duration-300 text-center w-40 sm:w-auto ml-auto"
+              className="bg-gray-200 border-2 px-6 py-3 rounded-lg font-semibold hover:bg-lime-300 transition duration-300 text-center w-40 sm:w-auto ml-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -86,18 +86,23 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="flex justify-around p-8 bg-white">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold">+150</h2>
-          <p className="text-gray-600">Estudantes Ativos</p>
+      <section className="flex flex-wrap justify-center gap-8 p-8 bg-black">
+        {/* Card 1 */}
+        <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
+          <h2 className="text-3xl text-gray-100 font-extrabold">+150</h2>
+          <p className="text-gray-300 mt-2">Estudantes Ativos</p>
         </div>
-        <div className="text-center">
-          <h2 className="text-2xl font-bold">+10</h2>
-          <p className="text-gray-600">Mentores</p>
+
+        {/* Card 2 */}
+        <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
+          <h2 className="text-3xl text-gray-100 font-extrabold">+10</h2>
+          <p className="text-gray-300 mt-2">Mentores</p>
         </div>
-        <div className="text-center">
-          <h2 className="text-2xl font-bold">Diversos</h2>
-          <p className="text-gray-600">Recursos</p>
+
+        {/* Card 3 */}
+        <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
+          <h2 className="text-3xl text-gray-100 font-extrabold">Diversos</h2>
+          <p className="text-gray-300 mt-2">Recursos</p>
         </div>
       </section>
 
@@ -283,54 +288,38 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <section className="mb-16 p-8 bg-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-8">Membros Ativos</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-            {[...Array(5)].map((_, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
-              >
-                <img
-                  src={`src/assets/member${index + 1}.jpg`} // Substitua pelos caminhos das imagens reais
-                  alt={`Membro ${index + 1}`}
-                  className="w-16 h-16 rounded-full border-2 border-gray-200 mb-4 object-cover"
-                />
-                <p className="text-gray-700 font-medium">Membro {index + 1}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Seção: Parcerias */}
-      <section className="text-center p-8">
-        <h2 className="text-3xl sm:text-4xl font-semibold mb-8">
-          Nossos Parceiros
+      <section className="text-center p-12 bg-slate-100">
+        {/* Título */}
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
+          Tornando a publicação fácil para milhares de empresas
         </h2>
-        <div className="flex justify-center gap-8">
-          <motion.img
-            src="src/assets/PARCEIROS/logoSebrae.png"
-            alt="Parceiro Sebrae"
-            className="h-12 transition-transform bg-black rounded-lg lg:pl-4 lg:pr-4 shadow-xl transform hover:scale-110"
-            whileHover={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 0.5 }}
-          />
-          <motion.img
-            src="src/assets/PARCEIROS/logowhite.png"
-            alt="Parceiro White"
-            className="h-12 transition-transform bg-black rounded-lg lg:pl-2 shadow-xl transform hover:scale-110"
-            whileHover={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 0.5 }}
-          />
-          <motion.img
-            src="src/assets/PARCEIROS/logo-parceiro.png"
-            alt="Parceiro Parceiro"
-            className="h-12 transition-transform bg-black rounded-lg lg:pl-4 lg:pr-4 shadow-xl transform hover:scale-110"
-            whileHover={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 0.5 }}
-          />
+
+        {/* Subtítulo */}
+        <p className="text-lg text-gray-600 mb-12">
+          Integre, publique e cresça com nossas ferramentas.
+        </p>
+        {/* Subtítulo */}
+        <p className="text-lg font-black text-purple-600 mb-2">
+          Seja um parceiro
+        </p>
+
+        {/* Logotipos dos Parceiros */}
+        <div className="flex flex-wrap justify-center items-center gap-8">
+          {[
+            { src: "src/assets/PARCEIROS/gradient.png", alt: "icenter" },
+            { src: "src/assets/PARCEIROS/logo-parceiro.png", alt: "holodeck" },
+            { src: "src/assets/PARCEIROS/TOV-Black.png", alt: "Tov.ia" },
+          ].map(({ src, alt }) => (
+            <motion.img
+              key={alt}
+              src={src}
+              alt={`Parceiro ${alt}`}
+              className="h-14 transform transition duration-2 hover:scale-110"
+              whileHover={{ rotate: [0, 5, -5, 0], scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            />
+          ))}
         </div>
       </section>
     </div>
