@@ -4,13 +4,13 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section - Imagem e Título Principal */}
-      <section className="flex flex-col md:flex-row items-center justify-between p-8 bg-black">
-        <div className="flex flex-col items-start justify-center md:w-1/2 text-left mb-8 md:mb-0">
+      <section className="flex flex-col md:flex-row items-center justify-between p-6 bg-black">
+        <div className="flex flex-col items-start justify-center lg:ml-12 md:w-1/2 text-left mb-8 md:mb-0">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl sm:text-5xl ml-4 md:text-6xl font-bold text-white mb-3 text-center md:text-left"
+            className="text-4xl sm:text-5xl lg:ml-4 md:text-6xl font-bold text-white mb-3 text-center md:text-left"
           >
             BEM VINDO AO MUNDO
             <br className="hidden md:block" />
@@ -20,7 +20,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-lg sm:text-xl ml-4 font-normal text-gray-200 mb-12 text-center md:text-left"
+            className="text-lg sm:text-xl lg:ml-4 font-normal text-gray-200 mb-12 text-center md:text-left"
           >
             Explore o futuro e se conecte com oportunidades tecnológicas.
           </motion.p>
@@ -45,9 +45,31 @@ const Home = () => {
               Contate-nos
             </motion.a>
           </div>
+
+          <section className="flex flex-wrap justify-center gap-8 mt-20 ml-4 bg-black">
+            {/* Card 1 */}
+            <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
+              <h2 className="text-3xl text-gray-100 font-extrabold">+150</h2>
+              <p className="text-gray-300 mt-2">Estudantes Ativos</p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
+              <h2 className="text-3xl text-gray-100 font-extrabold">+10</h2>
+              <p className="text-gray-300 mt-2">Mentores</p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
+              <h2 className="text-3xl text-gray-100 font-extrabold">
+                Diversos
+              </h2>
+              <p className="text-gray-300 mt-2">Recursos</p>
+            </div>
+          </section>
         </div>
 
-        <div className="md:w-1/2 flex justify-center">
+        <div className="md:w-2/5 flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="relative w-full mt-16 h-auto rounded-lg">
               <motion.img
@@ -83,26 +105,6 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-lg"></div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="flex flex-wrap justify-center gap-8 p-8 bg-black">
-        {/* Card 1 */}
-        <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
-          <h2 className="text-3xl text-gray-100 font-extrabold">+150</h2>
-          <p className="text-gray-300 mt-2">Estudantes Ativos</p>
-        </div>
-
-        {/* Card 2 */}
-        <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
-          <h2 className="text-3xl text-gray-100 font-extrabold">+10</h2>
-          <p className="text-gray-300 mt-2">Mentores</p>
-        </div>
-
-        {/* Card 3 */}
-        <div className="flex flex-col items-center text-center border-2 border-gray-700 rounded-lg p-4 transform transition duration-300 hover:scale-105">
-          <h2 className="text-3xl text-gray-100 font-extrabold">Diversos</h2>
-          <p className="text-gray-300 mt-2">Recursos</p>
         </div>
       </section>
 

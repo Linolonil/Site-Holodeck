@@ -11,10 +11,10 @@ const fadeInUp = {
 
 const Community = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r">
+    <div className="min-h-screen ">
       {/* Hero Section */}
       <section className="bg-black py-16">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+        <div className="container mx-auto px-8 flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 text-center md:text-left">
             <p className="text-gray-200 mb-4">
               Inspire-se e crie experiências:
