@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 py-8 text-white">
+    <footer className="bg-black  py-8 text-white">
     <div className="container mx-auto text-center">
       <p>&copy; 2024 Holodeck Community. Todos os direitos reservados.</p>
       <div className="mt-4 space-x-4">

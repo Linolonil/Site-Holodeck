@@ -9,19 +9,18 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-
 const Community = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#3e34af] to-[#7b39d8]">
+    <div className="min-h-screen bg-gradient-to-r">
       {/* Hero Section */}
-      <section className="bg-gray-900 py-16">
+      <section className="bg-black py-16">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 text-center md:text-left">
             <p className="text-gray-200 mb-4">
               Inspire-se e crie experiências:
             </p>
             <h1 className="text-4xl md:text-5xl text-gray-50 font-bold leading-tight mb-4">
-              Eleve seu <span className="text-[#8419c5]">conhecimento</span>{" "}
+              Eleve seu <span className="text-purple-700">conhecimento</span>{" "}
               compartilhando{" "}
               <span className="text-[#a9e916]">Projetos Criativos</span>
             </h1>
@@ -32,14 +31,14 @@ const Community = () => {
             </p>
             <a
               href="#expertise"
-              className="text-[#8419c5] justify-center lg:justify-start font-semibold t  flex items-center "
+              className="text-purple-500 justify-center lg:justify-start font-semibold flex items-center"
             >
               Role para baixo{" "}
-              <span className="ml-2 animate-bounce text-[#a9e916] text-2xl ">&#x2193;</span>
+              <span className="ml-2 animate-bounce text-lime-500 text-2xl"></span>
             </a>
           </div>
           <div className="w-full md:w-1/2 border-spacing-1 flex justify-center items-center mt-8 md:mt-0">
-          <img
+            <img
               src="src/assets/info-tech.png"
               alt="Profile Creation"
               className="w-full rounded-lg shadow-xl"
@@ -50,7 +49,7 @@ const Community = () => {
         {/*card especialition */}
         <section>
           <div className="container mx-auto px-4 mt-16">
-            <h2 className="text-2xl font-bold mb-8 text-slate-200 text-center">
+            <h2 className="text-2xl font-bold mb-8 text-gray-400 text-center">
               Nossa Especialização
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -86,7 +85,7 @@ const Community = () => {
                   rotate: 0,
                   boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.5)",
                 }}
-                className="bg-[#8419c5] text-white p-6 rounded-lg shadow-lg transition-transform duration-300 ease-out"
+                className="bg-purple-500 text-white p-6 rounded-lg shadow-lg transition-transform duration-300 ease-out"
               >
                 <h3 className="text-xl font-semibold mb-2">
                   Gerenciamento de Projetos
@@ -129,7 +128,7 @@ const Community = () => {
                 />
                 <a
                   href="https://g1.globo.com/am/amazonas/campus-party-amazonia/noticia/2023/10/15/cerimonia-marca-encerramento-da-primeira-edicao-da-campus-party-amazonia.ghtml"
-                  className="text-white hover:text-[#a9e916] transition-colors duration-300"
+                  className="text-white hover:text-lime-500 transition-colors duration-300"
                 >
                   Veja mais
                 </a>
@@ -140,17 +139,17 @@ const Community = () => {
       </section>
 
       {/* Mission Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-        className="container mx-auto py-16 px-6 text-white"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <section className="w-full py-16 px-6 bg-white text-white">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="grid grid-cols-1 px-8 md:grid-cols-2 gap-8 items-center"
+        >
           <div className="space-y-6">
-            <h2 className="text-4xl font-black">Nossa Missão</h2>
-            <p className="text-lg font-medium ">
+            <h2 className="text-4xl font-black text-gray-900">Nossa Missão</h2>
+            <p className="text-lg font-medium text-gray-800">
               A Holodeck é uma comunidade vibrante de entusiastas de tecnologia
               e inovação no norte do Brasil. Nossa missão é reunir pessoas
               apaixonadas por tecnologia, promovendo eventos, projetos
@@ -164,8 +163,8 @@ const Community = () => {
               className="w-full rounded-lg shadow-lg"
             />
           </div>
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
 
       {/* Projects Section */}
       <motion.section
@@ -177,7 +176,7 @@ const Community = () => {
         className="bg-white py-16"
       >
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-10">
             Nossos Projetos
           </h2>
           <CarouselSection />
@@ -185,36 +184,36 @@ const Community = () => {
       </motion.section>
 
       {/* Testimonials Section */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-black py-16">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-12">
+          <h2 className="text-4xl font-bold text-white mb-12">
             O que dizem nossos membros
           </h2>
           <div className="flex flex-col md:flex-row mx-4 justify-center space-y-6 md:space-y-0 md:space-x-6">
             {/* Small Card */}
-            <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg md:w-1/3">
-              <p className="text-gray-700">
+            <div className="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg md:w-1/3">
+              <p className="text-white">
                 "Participar da Holodeck foi um divisor de águas para minha
                 carreira. A colaboração e apoio da comunidade são inigualáveis."
               </p>
-              <p className="mt-4 font-semibold text-gray-800">- Pedro Lima</p>
+              <p className="mt-4 font-semibold text-lime-500">- Pedro Lima</p>
             </div>
             {/* Medium Card */}
-            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg md:w-1/2">
-              <p className="text-gray-700">
+            <div className="bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg md:w-1/2">
+              <p className="text-white">
                 "A Holodeck me deu a oportunidade de aprender e compartilhar
                 conhecimento em um ambiente acolhedor e inovador."
               </p>
-              <p className="mt-4 font-semibold text-gray-800">- Ana Costa</p>
+              <p className="mt-4 font-semibold text-lime-500">- Ana Costa</p>
             </div>
             {/* Large Card */}
-            <div className="bg-white p-8 md:p-10 rounded-lg shadow-lg md:w-2/3">
-              <p className="text-gray-700">
+            <div className="bg-gray-800 p-8 md:p-10 rounded-lg shadow-lg md:w-2/3">
+              <p className="text-white">
                 "Sou muito grato por fazer parte dessa comunidade. A experiência
                 tem sido enriquecedora em todos os sentidos, e me sinto
                 constantemente desafiado e inspirado."
               </p>
-              <p className="mt-4 font-semibold text-gray-800">
+              <p className="mt-4 font-semibold text-lime-500">
                 - Lucas Fernandes
               </p>
             </div>
@@ -223,33 +222,30 @@ const Community = () => {
           {/* Another Row with Diverse Sizes */}
           <div className="flex flex-col md:flex-row justify-center mx-4 space-y-6 md:space-y-0 md:space-x-6 mt-12">
             {/* Large Card */}
-            <div className="bg-white p-8 md:p-10 rounded-lg shadow-lg md:w-2/3">
-              <p className="text-gray-700">
+            <div className="bg-gray-800 p-8 md:p-10 rounded-lg shadow-lg md:w-2/3">
+              <p className="text-white">
                 "A comunidade da Holodeck tem sido um verdadeiro suporte na
                 minha jornada profissional. A energia colaborativa é contagiante
                 e inspiradora."
               </p>
-              <p className="mt-4 font-semibold text-gray-800">
+              
+              <p className="mt-4 font-semibold text-lime-500">
                 - Júlia Martins
               </p>
             </div>
             {/* Small Card */}
-            <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg md:w-1/3">
-              <p className="text-gray-700">
+            <div className="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg md:w-1/3">
+              <p className="text-white">
                 "O networking aqui é incrível. Consegui me conectar com pessoas
                 talentosas e dispostas a compartilhar seu conhecimento."
               </p>
-              <p className="mt-4 font-semibold text-gray-800">- Felipe Rocha</p>
+              <p className="mt-4 font-semibold text-lime-500">- Felipe Rocha</p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section
-        id="contato"
-        className="bg-gradient-to-r from-[#3e34af] to-[#7b39d8] py-16"
-      >
+      <section className=" bg-gray-900 py-16">
+        
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-white space-y-6">
@@ -263,20 +259,23 @@ const Community = () => {
                   Email:{" "}
                   <a
                     href="mailto:holodeckcomunity@gmail.com"
-                    className="underline"
+                    className="underline text-gray-400 hover:text-purple-400 transition-colors duration-300"
                   >
                     holodeckcomunity@gmail.com
                   </a>
                 </li>
                 <li>
                   Telefone:{" "}
-                  <a href="tel:+5592993007673" className="underline">
+                  <a
+                    href="tel:+5592993007673"
+                    className="underline text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                  >
                     +5592993007673
                   </a>
                 </li>
                 <li>Endereço: xx xxxxx, xxx, Alvorada, Manaus, AM</li>
               </ul>
-            <QRCodePopup />
+              <QRCodePopup />
             </div>
 
             <div>
@@ -289,17 +288,6 @@ const Community = () => {
                     type="text"
                     id="nome"
                     name="nome"
-                    className="w-full p-3 rounded-md shadow-sm border border-gray-300"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-gray-700">
-                    Email:
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
                     className="w-full p-3 rounded-md shadow-sm border border-gray-300"
                   />
                 </div>
@@ -328,24 +316,30 @@ const Community = () => {
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-[#8419c5] text-white p-3 rounded-md shadow-md hover:bg-[#6d14a3] transition-colors duration-300"
+                    className="w-full bg-purple-500 text-white p-3 rounded-md shadow-md hover:bg-lime-600 transition-colors duration-300"
                   >
                     Enviar
                   </button>
                 </div>
-                <div className="text-stone-900 text-sm mt-4">
-                <p>
-                  Ao enviar este formulário, você concorda com a nossa{" "}
-                  <a href="/PrivacyPolicy" className="underline text-[#8419c5]">
-                    Política de Privacidade
-                  </a>{" "}
-                  e os nossos{" "}
-                  <a href="/terms-of-service" className="underline text-[#8419c5]">
-                    Termos de Serviço
-                  </a>
-                  .
-                </p>
-                  </div>
+                <div className="text-gray-900 text-sm mt-4">
+                  <p>
+                    Ao enviar este formulário, você concorda com a nossa{" "}
+                    <a
+                      href="/PrivacyPolicy"
+                      className="underline text-purple-500"
+                    >
+                      Política de Privacidade
+                    </a>{" "}
+                    e os nossos{" "}
+                    <a
+                      href="/terms-of-service"
+                      className="underline text-purple-500"
+                    >
+                      Termos de Serviço
+                    </a>
+                    .
+                  </p>
+                </div>
               </form>
             </div>
           </div>
@@ -354,5 +348,5 @@ const Community = () => {
     </div>
   );
 };
-// }
+
 export default Community;

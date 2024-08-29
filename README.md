@@ -7,58 +7,110 @@ A estrutura do projeto é organizada de forma modular, com componentes reutiliz�
 
 ```bash
 holodeck-site/
-  ├── backend/
-  │   ├── package.json
-  │   ├── package-lock.json
-  │   └── server.js
-  ├── config/
-  │   └── constants/
-  │       └── constants
-  │           └── texts
-  │               ├── en/
-  │               └── pt-br/
-  ├── public/
-  ├── src/
-  │   ├── assets/                  # Imagens e arquivos estáticos
-  │   │   │   ├── icons            # Icons
-  │   │   ├── info-tech.png
-  │   │   ├── logo-sem-fundo.png
-  │   │   └── logo.png
-  │   ├── components/              # Componentes reutilizáveis
-  │   │   ├── Layout/              # Componentes de layout como Header, Footer, etc.
-  │   │   │   ├── BackgroundParticles.jsx
-  │   │   │   ├── Footer.jsx
-  │   │   │   └── Header.jsx
-  │   │   ├── Home/                # Componentes específicos para a Home
-  │   │   ├── Contact/             # Componentes para a página de Contato
-  │   │   ├── CommunityJoin/       # Componentes para Entrar na Comunidade
-  │   │   ├── Collaborator/        # Componentes para Ser um Colaborador
-  │   │   ├── Projects/            # Componentes para Projetos
-  │   │   ├── Events/              # Componentes para Eventos
-  │   │   ├── Store/               # Componentes para a Loja
-  │   │   └── Blog/                # Componentes para o Blog
-  │   ├── hooks/                   # Custom React hooks
-  │   ├── pages/                   # Páginas principais
-  │   │   ├── Home.jsx             # Página Home
-  │   │   ├── Contact.jsx          # Página Contato
-  │   │   ├── CommunityJoin.jsx    # Página Entrar na Comunidade
-  │   │   ├── Collaborator.jsx     # Página Ser um Colaborador
-  │   │   ├── Projects.jsx         # Página Projetos Já Desenvolvidos
-  │   │   ├── Events.jsx           # Página Eventos
-  │   │   ├── Store.jsx            # Página Loja
-  │   │   └── Blog.jsx             # Página Blog
-  │   ├── styles/                  # Arquivos de estilo (CSS, Tailwind)
-  │   │   └── main.css             # Arquivo principal de estilo
-  │   ├── utils/                   # Funções utilitárias
-  │   ├── App.jsx                  # Componente raiz
-  │   ├── main.jsx                 # Entrada do aplicativo
-  │   └── router.jsx               # Configuração de rotas
-  ├── index.html
-  ├── package.json
-  ├── package-lock.json
-  ├── postcss.config.js
-  ├── tailwind.config.js
-  └── vite.config.js
+├── backend/
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+├── config/
+│   └── constants/
+│       └── constants
+│           └── texts
+│               ├── en/
+│               └── pt-br/
+├── public/
+├── src/
+│
+├── assets/
+│   ├── images/           # Imagens usadas em todo o projeto
+│   ├── icons/            # Ícones vetoriais ou gráficos menores
+│   ├── fonts/            # Fontes personalizadas ou específicas do projeto
+│   └── videos/           # Vídeos utilizados no projeto
+│
+├── components/           # Componentes reutilizáveis
+│   ├── Auth/             # Componentes relacionados à autenticação
+│   │   ├── Login.jsx
+│   │   └── Register.jsx
+│   ├── Layout/           # Componentes de layout compartilhados
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   └── BackgroundParticles.jsx
+│   ├── Common/           # Componentes genéricos reutilizáveis
+│   │   ├── Button.jsx
+│   │   ├── Card.jsx
+│   │   └── Modal.jsx
+│   ├── Blog/             # Componentes específicos da página de Blog
+│   │   ├── BlogList.jsx
+│   │   └── BlogPost.jsx
+│   ├── Collaborator/     # Componentes para funcionalidades de colaborador
+│   │   ├── CollaboratorList.jsx
+│   │   └── CollaboratorProfile.jsx
+│   ├── Contact/          # Componentes para a página de contato
+│   │   ├── ContactForm.jsx
+│   │   └── ContactInfo.jsx
+│   ├── Projects/         # Componentes específicos da página de projetos
+│   │   ├── ProjectList.jsx
+│   │   └── ProjectDetails.jsx
+│   └── Outras pastas específicas/
+│
+├── pages/                # Páginas da aplicação
+│   ├── Auth/             # Páginas de autenticação
+│   │   ├── LoginPage.jsx
+│   │   └── RegisterPage.jsx
+│   ├── Blog/             # Páginas relacionadas ao blog
+│   │   └── Blog.jsx
+│   ├── Collaborator/     # Páginas relacionadas aos colaboradores
+│   │   └── Collaborator.jsx
+│   ├── Community/        # Páginas relacionadas à comunidade
+│   │   └── CommunityJoin.jsx
+│   ├── Contact/          # Página de contato
+│   │   └── Contact.jsx
+│   ├── Events/           # Página de eventos
+│   │   └── Events.jsx
+│   ├── Home/             # Página inicial
+│   │   └── Home.jsx
+│   ├── Projects/         # Página de projetos
+│   │   └── Projects.jsx
+│   └── Store/            # Página de loja
+│       └── Store.jsx
+│
+├── contexts/             # Contextos React para gerenciamento de estado global
+│   ├── AuthContext.jsx
+│   └── ThemeContext.jsx
+│
+├── hooks/                # Hooks customizados reutilizáveis
+│   ├── useAuth.js
+│   └── useFetch.js
+│
+├── services/             # Serviços externos ou API
+│   ├── api.js
+│   └── authService.js
+│
+├── styles/               # Arquivos de estilo
+│   ├── global/           # Estilos globais
+│   │   └── index.css
+│   ├── components/       # Estilos específicos para componentes
+│   └── pages/            # Estilos específicos para páginas
+│
+├── utils/                # Funções utilitárias e constantes
+│   ├── helpers/          # Funções utilitárias gerais
+│   │   ├── formatDate.js
+│   │   └── validateEmail.js
+│   ├── constants/        # Constantes usadas no projeto
+│   │   ├── apiEndpoints.js
+│   │   └── roles.js
+│   └── validators/       # Funções de validação específicas
+│       └── formValidators.js
+│
+├── PrivacyPolicy.jsx     # Componente para a política de privacidade
+├── App.jsx               # Componente raiz da aplicação
+├── main.jsx              # Ponto de entrada principal
+├── router.jsx            # Configurações de rotas             # Configuração de rotas
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+└── vite.config.js
 ```
 ## Tecnologias Utilizadas
 
@@ -85,7 +137,7 @@ Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 ```
 2. Navegue até o diretório do projeto:
 ```bash
- cd holodeck-site
+ cd site-holodeck
 ```
 3. Instale as dependências do projeto:
 ```bash

@@ -10,7 +10,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl sm:text-5xl ml-4 md:text-6xl font-bold text-white mb-4 text-center md:text-left"
+            className="text-4xl sm:text-5xl ml-4 md:text-6xl font-bold text-white mb-3 text-center md:text-left"
           >
             BEM VINDO AO MUNDO
             <br className="hidden md:block" />
@@ -20,12 +20,12 @@ const Home = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-lg sm:text-xl ml-4 font-normal text-gray-200 mb-6 text-center md:text-left"
+            className="text-lg sm:text-xl ml-4 font-normal text-gray-200 mb-12 text-center md:text-left"
           >
             Explore o futuro e se conecte com oportunidades tecnológicas.
           </motion.p>
 
-          <div className="flex flex-wrap ml-4 space-x-4 justify-center">
+          <div className="flex flex-wrap ml-4 space-x-4 justify-center mt-8">
             <motion.a
               href="#join"
               className="bg-purple-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-600 transition duration-300 text-center w-40 sm:w-auto"
@@ -46,6 +46,7 @@ const Home = () => {
             </motion.a>
           </div>
         </div>
+
         <div className="md:w-1/2 flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="relative w-full mt-16 h-auto rounded-lg">
@@ -99,29 +100,6 @@ const Home = () => {
           <p className="text-gray-600">Recursos</p>
         </div>
       </section>
-
-      {/* Seção de Informações Rápidas
-      <section className="mb-16 p-8">
-        <div className="flex flex-col md:flex-row items-center md:justify-between">
-          <div className="text-sm font-semibold mb-4 md:mb-0">
-            250+ USUÁRIOS SATISFEITOS E ABERTOS
-          </div>
-          <div className="flex items-center gap-3">
-            {[...Array(4)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-gray-300 p-2 rounded-full hover:bg-gray-400 transition duration-300"
-              >
-                <img
-                  src="src/assets/natan.JPG"
-                  alt={`User ${index + 1}`}
-                  className="w-8 h-8 rounded-full"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Seção Principal que engloba todas as seções */}
       <section className="w-full p-8 bg-black text-white">
@@ -236,7 +214,8 @@ const Home = () => {
       <section className="w-full p-8 bg-white text-black">
         <div className="w-full max-w-screen-xl mx-auto">
           <h1 className="text-4xl mt-7 font-bold text-center mb-12">
-          O primeiro CMS headless desenvolvido <br /> especificamente para blogs
+            O primeiro CMS headless desenvolvido <br /> especificamente para
+            blogs
           </h1>
 
           {/* Seção de Cards */}

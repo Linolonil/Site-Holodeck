@@ -11,6 +11,8 @@ import Events from '../src/pages/Events';
 import Store from '../src/pages/Store';
 import Blog from '../src/pages/Blog';
 import PrivacyPolicy from '../src/utils/privacypolicy';
+import Login from '../src/pages/Auth/LoginPage'; // Importar o componente Login
+import Register from '../src/pages/Auth/RegisterPage'; // Importar o componente Register
 
 const AppRouter = () => {
   return (
@@ -25,6 +27,8 @@ const AppRouter = () => {
         <Route path="/store" element={<Store />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/login" element={<Login />} /> {/* Adicionando a rota de Login */}
+        <Route path="/register" element={<Register />} /> {/* Adicionando a rota de Register */}
       </Routes>
     </Router>
   );
