@@ -332,7 +332,7 @@ const Community = () => {
                     </a>{" "}
                     e os nossos{" "}
                     <a
-                      href="/terms-of-service"
+                      href="/PrivacyPolicy"
                       className="underline text-purple-500"
                     >
                       Termos de Serviço
